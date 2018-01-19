@@ -1,3 +1,6 @@
+# Exclude my local files
+/local/
+
 # Compiled class file
 *.class
 
