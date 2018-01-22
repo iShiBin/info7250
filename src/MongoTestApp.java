@@ -13,7 +13,7 @@ public class MongoTestApp {
     public static void main(String[] args){
         
 //        Step 1: Establish a connection
-        MongoClient client = new MongoClient("54.218.19.24", 27107);
+        MongoClient client = new MongoClient("ip_address", 27107);
         
 //        Step 2: Point a database
         MongoDatabase database = client.getDatabase("nysedb");
