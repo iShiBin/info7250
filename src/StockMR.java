@@ -30,7 +30,9 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 public class StockMR {
     
     public static class StockMapper extends Mapper<Text, DoubleWritable, Text, DoubleWritable> {
-        public void map (Object key, Text value, Context context) 
+        
+        @Override
+        public void map (Text key, DoubleWritable value, Context context) 
                 throws IOException, InterruptedException {
             String[] tokens = value.toString().split(",");
             Text symbol = new Text();
@@ -47,6 +49,7 @@ public class StockMR {
         
         private DoubleWritable average = new DoubleWritable();
         
+        @Override
         public void reduce(Text key, Iterable<DoubleWritable> values, Context context)
         throws IOException, InterruptedException {
             double sum = 0;
