@@ -3,23 +3,15 @@
  */
 
 import java.io.IOException;
-import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.conf.Configured;
-import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.DoubleWritable;
-import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapred.lib.CombineFileInputFormat;
-import org.apache.hadoop.mapreduce.Job;
-import org.apache.hadoop.mapreduce.Mapper;
-import org.apache.hadoop.mapreduce.Reducer;
-import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
-import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
-import org.apache.hadoop.util.Tool;
-import org.apache.hadoop.util.ToolRunner;
+import org.apache.hadoop.conf.*;
+import org.apache.hadoop.fs.*;
+import org.apache.hadoop.io.*;
+import org.apache.hadoop.mapreduce.lib.input.*;
+import org.apache.hadoop.mapreduce.*;
+import org.apache.hadoop.mapreduce.lib.output.*;
+import org.apache.hadoop.util.*;
 
 public class FileInputFormatCombine extends Configured implements Tool {
-    
-    private static final long MB = 1024 * 1024L;
     
     public static class StockMapper extends Mapper<Object, Text, Text, DoubleWritable> {
         
@@ -64,7 +56,7 @@ public class FileInputFormatCombine extends Configured implements Tool {
         job.setJarByClass(FileInputFormatCombine.class);
         
         FileInputFormat.addInputPath(job, new Path(args[0]));
-        job.setInputFormatClass(CombineFileInputFormat.class);
+        // job.setInputFormatClass(CombineFileInputFormat.class);
         
         job.setMapperClass(StockMapper.class);
         job.setReducerClass(StockReducer.class);
