@@ -8,7 +8,7 @@
 
 3. Write one MapReduce program using each of the classes that extend FileInputFormat<k,v>
 (CombineFileInputFormat, FixedLengthInputFormat, KeyValueTextInputFormat, NLineInputFormat, SequenceFileInputFormat, TextInputFormat)
-http://hadoop.apache.org/docs/r2.7.3/api/org/apache/hadoop/mapreduce/lib/input/FileInputFormat.html
+http://hadoop.apache.org/docs/r3.0.0/api/org/apache/hadoop/mapreduce/lib/input/FileInputFormat.html
 You could use any input file of your choice. The size of the input files is not important. The MR programs could simply do counting, or any other analysis you choose.
 
 4. Create a Writable object that stores some fields from the the NYSE dataset to find the followings in MapReduce.
