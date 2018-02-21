@@ -29,10 +29,10 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
  */
 public class StockMR {
     
-    public static class StockMapper extends Mapper<Text, DoubleWritable, Text, DoubleWritable> {
+    public static class StockMapper extends Mapper<Object, Text, Text, DoubleWritable> {
         
         @Override
-        public void map (Text key, DoubleWritable value, Context context) 
+        public void map (Object key, Text value, Context context) 
                 throws IOException, InterruptedException {
             String[] tokens = value.toString().split(",");
             Text symbol = new Text();
@@ -81,3 +81,4 @@ public class StockMR {
     }
 
 }
+
