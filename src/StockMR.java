@@ -23,16 +23,12 @@ import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-/**
- * @author bin
- *
- */
 public class StockMR {
     
-    public static class StockMapper extends Mapper<Text, DoubleWritable, Text, DoubleWritable> {
+    public static class StockMapper extends Mapper<Object, Text, Text, DoubleWritable> {
         
         @Override
-        public void map (Text key, DoubleWritable value, Context context) 
+        public void map (Object key, Text value, Context context) 
                 throws IOException, InterruptedException {
             String[] tokens = value.toString().split(",");
             Text symbol = new Text();
