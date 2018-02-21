@@ -11,7 +11,7 @@ import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-public class IPCount {
+public class MovieCount {
 
   public static class TokenizerMapper
        extends Mapper<Object, Text, Text, IntWritable>{
@@ -21,7 +21,7 @@ public class IPCount {
 
     public void map(Object key, Text value, Context context
                     ) throws IOException, InterruptedException {
-      StringTokenizer itr = new StringTokenizer(value.toString().split(" ")[0]);
+      StringTokenizer itr = new StringTokenizer(value.toString().split("::")[1]); //split
       while (itr.hasMoreTokens()) {
         word.set(itr.nextToken());
         context.write(word, one);
@@ -47,8 +47,8 @@ public class IPCount {
 
   public static void main(String[] args) throws Exception {
     Configuration conf = new Configuration();
-    Job job = Job.getInstance(conf, "IP Count");
-    job.setJarByClass(IPCount.class);
+    Job job = Job.getInstance(conf, "Movie Count");
+    job.setJarByClass(MovieCount.class);
     job.setMapperClass(TokenizerMapper.class);
     job.setCombinerClass(IntSumReducer.class);
     job.setReducerClass(IntSumReducer.class);
