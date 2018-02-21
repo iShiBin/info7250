@@ -56,7 +56,7 @@ public class FileInputFormatCombine extends Configured implements Tool {
         job.setJarByClass(FileInputFormatCombine.class);
         
         FileInputFormat.addInputPath(job, new Path(args[0]));
-        // job.setInputFormatClass(CombineFileInputFormat.class);
+        job.setInputFormatClass(CombineTextInputFormat.class);
         
         job.setMapperClass(StockMapper.class);
         job.setReducerClass(StockReducer.class);
