@@ -11,7 +11,7 @@ import org.apache.hadoop.mapreduce.*;
 import org.apache.hadoop.mapreduce.lib.output.*;
 import org.apache.hadoop.util.*;
 
-public class FileInputFormatCombine extends Configured implements Tool {
+public class InputFormatCombineFile extends Configured implements Tool {
     
     public static class StockMapper extends Mapper<Object, Text, Text, DoubleWritable> {
         
@@ -53,7 +53,7 @@ public class FileInputFormatCombine extends Configured implements Tool {
         Configuration conf = this.getConf();
         
         Job job = Job.getInstance(conf, "Stock Average Price");
-        job.setJarByClass(FileInputFormatCombine.class);
+        job.setJarByClass(InputFormatCombineFile.class);
         
         FileInputFormat.addInputPath(job, new Path(args[0]));
         job.setInputFormatClass(CombineTextInputFormat.class);
@@ -77,7 +77,7 @@ public class FileInputFormatCombine extends Configured implements Tool {
 
         int code = -1;
         try {
-            code = ToolRunner.run(new Configuration(), new FileInputFormatCombine(), args);
+            code = ToolRunner.run(new Configuration(), new InputFormatCombineFile(), args);
         } catch (Exception e) {
             e.printStackTrace();
         }
