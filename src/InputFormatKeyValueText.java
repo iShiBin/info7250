@@ -13,7 +13,7 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
-import org.apache.hadoop.mapreduce.lib.input.FixedLengthInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.KeyValueTextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
@@ -55,7 +55,7 @@ public class InputFormatKeyValueText extends Configured implements Tool {
         job.setJarByClass(InputFormatKeyValueText.class);
 
         FileInputFormat.addInputPath(job, new Path(args[0]));
-        job.setInputFormatClass(FixedLengthInputFormat.class);
+        job.setInputFormatClass(KeyValueTextInputFormat.class);
 
         job.setMapperClass(DemoMapper.class);
         job.setReducerClass(DemoReducer.class);
