@@ -1,6 +1,9 @@
 # Part 2 Requirements
 Download and Copy all the files to a folder in HDFS (http://msis.neu.edu/nyse/)  
-Write a Java Program to implement PutMerge as discussed in the class to merge the NYSE files in HDFS to find the average price of stock-price-high values for each stock using MapReduce on the single merged-file. Compare the running times of your original program doing MapReduce on multiple files to the modified version that merges all the files into a single file to perform MapReduce.
+
+Write a Java Program to implement PutMerge as discussed in the class to merge the NYSE files in HDFS to find the average price of stock-price-high values for each stock using MapReduce on the single merged-file. 
+
+Compare the running times of your original program doing MapReduce on multiple files to the modified version that merges all the files into a single file to perform MapReduce.
 
 # Prepare the Input
 
