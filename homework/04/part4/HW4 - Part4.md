@@ -1,5 +1,5 @@
 # REQUIREMENTS (PART 4)
-Download the following dataset and Copy all the files to a folder in HDFS
+Download the following dataset and copy all the files to a folder in HDFS
 
 MovieLens 10M - Stable benchmark dataset. 10 million ratings and 100,000 tag applications applied to 10,000 movies by 72,000 users.
 http://grouplens.org/datasets/movielens
@@ -147,9 +147,11 @@ public class RatingCounter extends Configured implements Tool {
 ```
 
 ## Input
+
 Put the 'ratings.dat' file to HDFS folder /movielens/ml-1m/rating/input.
 
 ## Execution
+
 - Compile: (Eclipse will automatically compile and output the classes files in $PROJECT_ROOT/bin)
 - Package: `jar cf rc.ar RatingCounter*.class`
 - Run: `hadoop jar rc.jar RatingCounter /movielens/ml-1m/rating/input /movielens/ml-1m/rating/output`
@@ -189,10 +191,11 @@ import org.apache.hadoop.mapreduce.lib.input.KeyValueTextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
+import sun.security.krb5.Config;
 
 public class TopK extends Configured implements Tool {
 
-    private static int k = 25;//todo: dynamic k
+    private static int k = 25;//dynamic k: hadoop jar topk.jar TopK -D topk=10 /input_dir /output_dir
 
     public static class RankMapper extends Mapper<Text, Text, LongWritable, Text> {
 
@@ -201,20 +204,21 @@ public class TopK extends Configured implements Tool {
             context.write(new LongWritable(Long.parseLong(vote.toString())), item);
         }
     }
-    
+
     public static class RankReducer extends Reducer<LongWritable, Text, Text, LongWritable> { //bugfix
-    
+
         private int counter = 0;
-    
+        
         @Override
         protected void setup(Context context) throws IOException, InterruptedException {
+            k = context.getConfiguration().getInt("topk", k);
             counter = 0;
         }
-    
+
         @Override
         public void reduce(LongWritable vote, Iterable<Text> items, Context context)
                 throws IOException, InterruptedException {
-    
+
             if (counter < k) { // display the ties at last item
                 for (Text item : items) {
                     context.write(item, vote); // flip the key and value
@@ -223,35 +227,34 @@ public class TopK extends Configured implements Tool {
             }
         }
     }
-    
+
     @Override
     public int run(String[] args) throws Exception {
         Configuration conf = this.getConf();
         Job job = Job.getInstance(conf, "Top K Board");
         job.setJarByClass(TopK.class);
-    
+
         job.setMapperClass(RankMapper.class);
         job.setInputFormatClass(KeyValueTextInputFormat.class);
-        job.setMapOutputKeyClass(LongWritable.class); //bugfix
+        job.setMapOutputKeyClass(LongWritable.class);
         job.setMapOutputValueClass(Text.class);
-        // -D
-        // mapreduce.input.keyvaluelinerecordreader.key.value.separator="separator"
-    
+
         job.setReducerClass(RankReducer.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(LongWritable.class);
         job.setNumReduceTasks(1);
         job.setSortComparatorClass(LongWritable.DecreasingComparator.class);
-    
+        
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
-    
+
         job.submit();
-    
+
         return job.waitForCompletion(true) ? 0 : 1;
     }
-    
+
     public static void main(String[] args) {
+        System.out.println("Get the top " + k +". You can set the k value: hadoop jar topk.jar TopK -D topk=10 /input_dir /output_dir");
         int code = -1;
         try {
             code = ToolRunner.run(new Configuration(), new TopK(), args);
@@ -261,10 +264,10 @@ public class TopK extends Configured implements Tool {
         System.exit(code);
     }
 }
-
 ```
 
 ## INPUT
+
 The input would be the output of the first map reduce job file 'ratingcounter.dms'.
 
 ## EXECUTION
@@ -337,5 +340,7 @@ Here comes the list in ratings descending order.
 
 # FURTHERMORE
 This is out of the assignment's scope but what could be done as follow-ups are:
-* generalize the K so that this program could be used to count the top K
+
+- [x] generalize the K so that this program could be used to count the top K
+
 * implement the `[movieid:name]` hash map so it can display the movie name instead of id automatically

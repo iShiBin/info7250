@@ -13,9 +13,11 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
+import sun.security.krb5.Config;
+
 public class TopK extends Configured implements Tool {
 
-    private static int k = 25;//todo: dynamic k
+    private static int k = 25;//dynamic k: hadoop jar topk.jar TopK -D topk=10 /input_dir /output_dir
 
     public static class RankMapper extends Mapper<Text, Text, LongWritable, Text> {
 
@@ -28,16 +30,17 @@ public class TopK extends Configured implements Tool {
     public static class RankReducer extends Reducer<LongWritable, Text, Text, LongWritable> { //bugfix
 
         private int counter = 0;
-
+        
         @Override
         protected void setup(Context context) throws IOException, InterruptedException {
+            k = context.getConfiguration().getInt("topk", k);
             counter = 0;
         }
 
         @Override
         public void reduce(LongWritable vote, Iterable<Text> items, Context context)
                 throws IOException, InterruptedException {
-            
+
             if (counter < k) { // display the ties at last item
                 for (Text item : items) {
                     context.write(item, vote); // flip the key and value
@@ -55,10 +58,8 @@ public class TopK extends Configured implements Tool {
 
         job.setMapperClass(RankMapper.class);
         job.setInputFormatClass(KeyValueTextInputFormat.class);
-        job.setMapOutputKeyClass(LongWritable.class); //bugfix
+        job.setMapOutputKeyClass(LongWritable.class);
         job.setMapOutputValueClass(Text.class);
-        // -D
-        // mapreduce.input.keyvaluelinerecordreader.key.value.separator="separator"
 
         job.setReducerClass(RankReducer.class);
         job.setOutputKeyClass(Text.class);
@@ -75,6 +76,7 @@ public class TopK extends Configured implements Tool {
     }
 
     public static void main(String[] args) {
+        System.out.println("Get the top " + k +". You can set the k value: hadoop jar topk.jar TopK -D topk=10 /input_dir /output_dir");
         int code = -1;
         try {
             code = ToolRunner.run(new Configuration(), new TopK(), args);
