@@ -1,12 +1,8 @@
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Mapper;
@@ -20,87 +16,51 @@ import org.apache.hadoop.util.ToolRunner;
 public class StockVolumeMR extends Configured implements Tool {
 
     public static class TheMapper extends Mapper<Object, Text, Text, StockWritable> {
-        StockWritable stock = new StockWritable();
-        Text exchange = new Text();
+        StockWritable stock = null;
         
         @Override
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
-//            StockWritable stock = new StockWritable(value.toString());
-//            exchange.set(stock.getExchange());
             
-            String[] fields = value.toString().split(",");
-            exchange.set(fields[0]);
+            System.out.println(value);
+            stock = new StockWritable(value.toString());
             
-            stock.setDate(fields[2]);
-            stock.setVolume(Integer.parseInt(fields[7]));
-            stock.setAdjClosePrice(Float.parseFloat(fields[8]));
-            
-            System.out.println(stock);
-            context.write(exchange, stock); // key -> NullWritable.get()
+            if (stock != null) {
+                context.write(new Text(stock.getExchange()), stock); // key -> NullWritable.get()
+            } else {
+                System.out.println("Map: StockWritable is null");
+                System.exit(1);
+            }
         }
     }
 
     public static class TheReducer extends Reducer<Text, StockWritable, Text, StockWritable> {
+        
+        StockWritable max = null;
+        StockWritable min = null;
+        StockWritable price = null; // stock with max adjClosePrice
 
         @Override
         public void reduce(Text key, Iterable<StockWritable> values, Context context)
                 throws IOException, InterruptedException {
-
-            int minVolume = Integer.MAX_VALUE;
-            List<StockWritable> minVolumeStocks = new ArrayList<>();
-            // could be more than one stock having the min Volume
-
-            int maxVolume = Integer.MIN_VALUE;
-            List<StockWritable> maxVolumeStocks = new ArrayList<>();
-            // could be more than one
-
-            float maxAdjClosePrice = 0;
-            List<StockWritable> maxPriceStocks = new ArrayList<>();
-
-            for (StockWritable stock : values) {
-
-                int volume = stock.getVolume();
-                float price = stock.getAdjClosePrice();
-
-                if (volume < minVolume) {
-                    minVolume = volume;
-                    minVolumeStocks.clear();
-                    minVolumeStocks.add(stock);
-                } else if (volume == minVolume) {
-                    minVolumeStocks.add(stock);
+            
+            for(StockWritable stock: values) {
+                if (min == null || stock.getVolume() < min.getVolume()) {
+                    min = new StockWritable(stock.getDate(), stock.getVolume(), stock.getAdjClosePrice());
                 }
-
-                if (volume > maxVolume) {
-                    maxVolume = volume;
-                    maxVolumeStocks.clear();
-                    maxVolumeStocks.add(stock);
-                } else if (volume == maxVolume) {
-                    maxVolumeStocks.add(stock);
+                
+                if (max == null || stock.getVolume() > max.getVolume()) {
+                    max = stock;
                 }
-
-                if (price > maxAdjClosePrice) {
-                    maxAdjClosePrice = price;
-                    maxPriceStocks.clear();
-                    maxPriceStocks.add(stock);
-                } else if (price == maxAdjClosePrice) {
-                    maxPriceStocks.add(stock);
+                
+                if (price == null || stock.getAdjClosePrice() > price.getAdjClosePrice()) {
+                    price = stock;
                 }
             }
-
-            Collection<StockWritable> stocks = new ArrayList<StockWritable>();
-            stocks.addAll(maxVolumeStocks);
-            stocks.addAll(minVolumeStocks);
-            stocks.addAll(maxPriceStocks);
-
-            stocks.forEach(stock -> {
-                try {
-                    context.write(key, stock);
-                } catch (IOException | InterruptedException e) {
-                    System.err.println("Reduce failed. Cannot write to the output!");
-                    e.printStackTrace();
-                }
-            });
-
+            
+            if(max != null) context.write(key, max);
+            if(min != null) context.write(key, min);
+            if(price != null) context.write(key, price);
+            else System.out.println("Reduce: Error - null");
         }
     }
 
@@ -115,7 +75,7 @@ public class StockVolumeMR extends Configured implements Tool {
         job.setInputFormatClass(TextInputFormat.class);
 
         job.setMapperClass(TheMapper.class);
-//        job.setCombinerClass(TheReducer.class); // optimized
+        job.setCombinerClass(TheReducer.class); // optimized
         job.setReducerClass(TheReducer.class);
         
         job.setMapOutputKeyClass(Text.class); //NullWritable

@@ -35,6 +35,10 @@ public class StockWritable implements Writable {
     public void setDate(String date) {
         this.date = convert(date);
     }
+    
+    public void setDate(int date) {
+        this.date = date;
+    }
 
     public int getVolume() {
         return this.getVolume();
@@ -52,26 +56,21 @@ public class StockWritable implements Writable {
         this.adjClosePrice = price;
     }
     
-    public String getExchange() {
+    public String getExchange () {
         return this.exchange;
     }
     
-    public void setExchange (String exchange) {
-        this.exchange = exchange;
-    }
-    
     StockWritable() {
-        this.exchange = "NYSE";
-        this.symbol = "";
-        this.date = 19700101;
-        this.openPrice = 0f;
-        this.highPrice = 0f;
-        this.lowPrice = 0f;
-        this.closePrice = 0f;
-        this.adjClosePrice = 0f;
-        this.volume = 0;
+//        this.exchange = "NYSE";
+//        this.symbol = "";
+//        this.date = 19700101;
+//        this.openPrice = 0f;
+//        this.highPrice = 0f;
+//        this.lowPrice = 0f;
+//        this.closePrice = 0f;
+//        this.adjClosePrice = 0f;
+//        this.volume = 0;
     }
-    
 
     StockWritable(int date, int volume, float adjClosePrice) {
         this.date = date;
@@ -79,9 +78,7 @@ public class StockWritable implements Writable {
         this.adjClosePrice = adjClosePrice;
     }
     
-    StockWritable(String line) { 
-        this(); // initialize attributes in case of line is null
-        
+    StockWritable(String line) {
         //NYSE,AEA,2010-02-08,4.42,4.42,4.21,4.24,205500,4.24
         /*
         | exchange              | NYSE      |
@@ -151,7 +148,7 @@ public class StockWritable implements Writable {
 
     @Override
     public String toString() {
-        return this.date + "," + this.volume + "," + this.adjClosePrice;
+        return this != null?this.date + "," + this.volume + "," + this.adjClosePrice:"null";
     }
     
     public static void main(String[] args) throws IOException {
