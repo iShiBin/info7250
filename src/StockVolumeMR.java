@@ -20,47 +20,48 @@ public class StockVolumeMR extends Configured implements Tool {
         
         @Override
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
-            
-            System.out.println(value);
             stock = new StockWritable(value.toString());
             
             if (stock != null) {
-                context.write(new Text(stock.getExchange()), stock); // key -> NullWritable.get()
+                context.write(new Text(stock.getSymbol()), stock);
             } else {
                 System.out.println("Map: StockWritable is null");
-                System.exit(1);
             }
         }
     }
 
     public static class TheReducer extends Reducer<Text, StockWritable, Text, StockWritable> {
         
-        StockWritable max = null;
-        StockWritable min = null;
-        StockWritable price = null; // stock with max adjClosePrice
+        StockWritable max = new StockWritable();
+        StockWritable min = new StockWritable();
+        StockWritable price = new StockWritable(); // stock with max adjClosePrice
 
         @Override
         public void reduce(Text key, Iterable<StockWritable> values, Context context)
                 throws IOException, InterruptedException {
             
             for(StockWritable stock: values) {
-                if (min == null || stock.getVolume() < min.getVolume()) {
-                    min = new StockWritable(stock.getDate(), stock.getVolume(), stock.getAdjClosePrice());
+                
+                int volume = stock.getVolume();
+                
+                if (max.getVolume() == -1 || max.getVolume() < volume) {
+                    max = new StockWritable(stock);
                 }
                 
-                if (max == null || stock.getVolume() > max.getVolume()) {
-                    max = stock;
+                if (min.getVolume() == -1 || min.getVolume() > volume) {
+                    min.setDate(stock.getDate());
+                    min.setVolume(volume);
+                    min.setPrice(stock.getPrice());
                 }
                 
-                if (price == null || stock.getAdjClosePrice() > price.getAdjClosePrice()) {
-                    price = stock;
+                if (price.getPrice() == -1 || price.getPrice() > stock.getPrice()) {
+                    price = new StockWritable(stock);
                 }
             }
             
-            if(max != null) context.write(key, max);
-            if(min != null) context.write(key, min);
-            if(price != null) context.write(key, price);
-            else System.out.println("Reduce: Error - null");
+            context.write(key, max);
+            context.write(key, min);
+            context.write(key, price);
         }
     }
 
@@ -75,14 +76,14 @@ public class StockVolumeMR extends Configured implements Tool {
         job.setInputFormatClass(TextInputFormat.class);
 
         job.setMapperClass(TheMapper.class);
-        job.setCombinerClass(TheReducer.class); // optimized
+        job.setCombinerClass(TheReducer.class);
         job.setReducerClass(TheReducer.class);
         
-        job.setMapOutputKeyClass(Text.class); //NullWritable
+        job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(StockWritable.class);
 
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
-        job.setOutputKeyClass(Text.class); //NullWritable
+        job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(StockWritable.class);
 
         return job.waitForCompletion(true) ? 0 : 1;
