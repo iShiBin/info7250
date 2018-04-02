@@ -83,7 +83,6 @@ public class StockWritable implements Writable {
     }
 
     StockWritable() {
-//        this.symbol = null;
         this.date = null;
         this.volume = -1;
         this.price = -1;
@@ -119,7 +118,6 @@ public class StockWritable implements Writable {
     }
     
     StockWritable(StockWritable stock) {
-//        this.symbol = stock.symbol;
         this.date = new Date(stock.getDate().getTime());
         this.volume = stock.getVolume();
         this.price = stock.getPrice();

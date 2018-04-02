@@ -25,20 +25,21 @@ public class StockVolumeMR extends Configured implements Tool {
             if (stock != null) {
                 context.write(new Text(stock.getSymbol()), stock);
             } else {
-                System.out.println("Map: StockWritable is null");
+                System.out.println("Map: One StockWritable is null");
             }
         }
     }
 
     public static class TheReducer extends Reducer<Text, StockWritable, Text, StockWritable> {
-        
-        StockWritable max = new StockWritable();
-        StockWritable min = new StockWritable();
-        StockWritable price = new StockWritable(); // stock with max adjClosePrice
 
         @Override
         public void reduce(Text key, Iterable<StockWritable> values, Context context)
                 throws IOException, InterruptedException {
+            
+//            move outside of reduce() to get the global max/min
+            StockWritable max = new StockWritable();
+            StockWritable min = new StockWritable();
+            StockWritable price = new StockWritable(); // stock with max adjClosePrice
             
             for(StockWritable stock: values) {
                 
@@ -54,7 +55,7 @@ public class StockVolumeMR extends Configured implements Tool {
                     min.setPrice(stock.getPrice());
                 }
                 
-                if (price.getPrice() == -1 || price.getPrice() > stock.getPrice()) {
+                if (price.getPrice() == -1 || price.getPrice() < stock.getPrice()) {
                     price = new StockWritable(stock);
                 }
             }
