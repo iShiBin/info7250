@@ -62,6 +62,7 @@ public class IPSecondarySortingMR extends Configured implements Tool {
 
     public static class TheReducer extends Reducer<IPDatePair, IntWritable, IPDatePair, LongWritable> {
 
+        @Override
         public void reduce(IPDatePair key, Iterable<IntWritable> values, Context context)
                 throws IOException, InterruptedException {
             long timestamp = -1;
