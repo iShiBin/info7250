@@ -48,6 +48,8 @@ public class MovieMedianStdDevMR extends Configured implements Tool {
         public void reduce(Text key, Iterable<IntWritable> values, Context context)
                 throws IOException, InterruptedException {
             
+            ratings.clear(); // bugfix
+            
             for(IntWritable v: values) {
                 ratings.add(v.get());
             }
