@@ -4,15 +4,11 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.SortedMapWritable;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.io.Writable;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
@@ -24,136 +20,72 @@ import org.apache.hadoop.util.ToolRunner;
 
 public class MovieMedianStdDevMCR extends Configured implements Tool {
 
-    public static class TheMapper extends Mapper<Object, Text, Text, SortedMapWritable<IntWritable>> {
+    public static class TheMapper extends Mapper<Object, Text, Text, Text> {
         
-        private Text movieID = new Text(); // Text is more generic
-        private IntWritable rating = new IntWritable(); // whole-star ratings
-        public static final IntWritable ONE = new IntWritable(1);
-
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
             String[] fields = value.toString().split("::");
 
-            if (fields == null || fields.length < 2)
-                return;
+            if (fields == null || fields.length < 2) return;
 
-            SortedMapWritable<IntWritable> map = new SortedMapWritable<IntWritable>();
+            Text movieID = new Text(fields[1]);
+            Text rating = new Text(fields[2]);
             
-            movieID.set(fields[1]);
-            rating.set(Integer.parseInt(fields[2]));
-            map.put(rating, ONE);
-            
-            context.write(movieID, map);
+            context.write(movieID, rating);
         }
     }
 
-    public static class TheCombiner extends Reducer<Text, SortedMapWritable<IntWritable>, Text, SortedMapWritable<IntWritable>> {
+    public static class TheCombiner extends Reducer<Text, Text, Text, Text> {
         
-        protected void reduce(Text key, Iterable<SortedMapWritable<IntWritable>> values, Context context)
+        Map<String, Integer> map = new HashMap<>();
+        
+        protected void reduce(Text key, Iterable<Text> values, Context context)
                 throws IOException, InterruptedException {
             
-            context.write(key, merge(values));
-        }
-    }
-    
-    public static SortedMapWritable<IntWritable> merge(Iterable<SortedMapWritable<IntWritable>> values) {
-
-        SortedMapWritable<IntWritable> outValue = new SortedMapWritable<IntWritable>();
-
-        // merge the sorted map
-        for (SortedMapWritable<IntWritable> v : values) {
-            for (Entry<IntWritable, Writable> entry : v.entrySet()) {
-                if(outValue.containsKey(entry.getKey())) {
-                    int existing = ( (IntWritable)outValue.get(entry.getKey())).get();
-                    int adding = ( (IntWritable)entry.getValue() ).get();
-                    outValue.put(entry.getKey(), new IntWritable(existing+adding));
-                } else {
-                    outValue.put(entry.getKey(), entry.getValue());
-                }
+            map.clear();
+            
+            for(Text v: values) {
+                String rating = v.toString();
+                map.merge(rating, 1, (exist, addon)->exist.intValue() + addon.intValue());
             }
+            
+            //value format: {3=1, 4=2, 5=1}
+            context.write(key, new Text(map.toString()));
+            
         }
-        
-        return outValue;
     }
 
-    public static class TheReducer extends Reducer<Text, SortedMapWritable<IntWritable>, Text, Text> {
+    public static class TheReducer extends Reducer<Text, Text, Text, MedianStdDevTuple> {
+        
+        MedianStdDevTuple result = new MedianStdDevTuple();
+        Map<Integer, Integer> map = new HashMap<>();
 
         @Override
-        public void reduce(Text key, Iterable<SortedMapWritable<IntWritable>> values, Context context)
-                throws IOException, InterruptedException {
+        public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
 
-            // MedianStdDevTuple result = new MedianStdDevTuple();
+            map.clear();
             
-            for (SortedMapWritable<IntWritable> map : values) {
-                String rating = "";
-                String times = "";
-                for (Map.Entry<IntWritable, Writable> entry : map.entrySet()) {
-                    rating = entry.getKey().toString();
-                    times = entry.getValue().toString();
+//          {3=1, 4=2, 5=1}
+            for(Text v: values) {
+                String flatMap = v.toString().substring(1, v.getLength()-1); // remove {}
+                String[] entries = flatMap.split(", ");
+                
+                if(entries == null || entries.length == 0) return; // skipped the empty ones
+                
+                for(String e: entries) { // 3=1, 4=2, 5=1
+                    String[] keyValue = e.split("=");
+                    int rating = Integer.valueOf(keyValue[0]);
+                    int num = Integer.valueOf(keyValue[1]);
+                    map.merge(rating, num, (exist, addon) -> exist.intValue() + addon.intValue());
                 }
-                context.write(key, new Text(rating + "->" + times));
             }
+            
+            result.setMedian(getMedian(map));
+            result.setStdDev((float)getStdDev(map));
+            
+            context.write(key, result);
         }
     }
-//    
-//    public static class TheReducer extends Reducer<Text, SortedMapWritable<IntWritable>, Text, MedianStdDevTuple> {
-//        
-//        Map<Integer, Integer> map = new HashMap<>();
-//        MedianStdDevTuple result = new MedianStdDevTuple();
-//        
-//        @Override
-//        public void reduce(Text key, Iterable<SortedMapWritable<IntWritable>> values, Context context)
-//                throws IOException, InterruptedException {
-//            
-//            map.clear();
-//            
-//            SortedMapWritable<IntWritable> mergedSortedMap = merge(values);
-//            
-//            for (IntWritable k: mergedSortedMap.keySet()) {
-//                int v = ((IntWritable)mergedSortedMap.get(k)).get();
-//                map.put(k.get(), v);
-//            }
-//
-//            Float median = getMedian(map);
-//            result.setMedian(median == null?0:median.floatValue());
-//            result.setStdDev((float) getStdDev(map));
-//
-//            context.write(key, result);
-//        }
-//    }
-    
-//    public static class TheReducer extends Reducer<Text, SortedMapWritable<IntWritable>, Text, MedianStdDevTuple> {
-//        
-//        Map<Integer, Integer> map = new HashMap<>();
-//        MedianStdDevTuple result = new MedianStdDevTuple();
-//        
-//        @Override
-//        public void reduce(Text key, Iterable<SortedMapWritable<IntWritable>> values, Context context)
-//                throws IOException, InterruptedException {
-//            
-//            map.clear();
-//            
-//            for(SortedMapWritable<IntWritable> v: values) {
-//                for (Entry<IntWritable, Writable> entry : v.entrySet()) {
-//                    int rating = entry.getKey().get();
-//                    int count = ((IntWritable) entry.getValue()).get();
-//                    
-//                    Integer counted = map.get(rating);
-//                    if (counted == null) {
-//                        map.put(rating, count);
-//                    } else {
-//                        map.put(rating, count + counted.intValue());
-//                    }
-//                }
-//            }
-//
-//            Float median = getMedian(map);
-//            result.setMedian(median == null?0:median.floatValue());
-//            result.setStdDev((float) getStdDev(map));
-//
-//            context.write(key, result);
-//        }
-//    }
-    
+
     public static Float getMedian(Map<Integer, Integer> map) {
         long count = map.values().stream().mapToInt(Integer::valueOf).sum();
         
@@ -226,15 +158,15 @@ public class MovieMedianStdDevMCR extends Configured implements Tool {
 
         job.setMapperClass(TheMapper.class);
         job.setMapOutputKeyClass(Text.class);
-        job.setMapOutputValueClass(SortedMapWritable.class);
-//        job.setCombinerClass(TheCombiner.class);
+        job.setMapOutputValueClass(Text.class);
+        job.setCombinerClass(TheCombiner.class);
 
         job.setReducerClass(TheReducer.class);
         job.setNumReduceTasks(1);
 
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
         job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(Text.class);
+        job.setOutputValueClass(MedianStdDevTuple.class);
 
         return job.waitForCompletion(true) ? 0 : 1;
     }
