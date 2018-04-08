@@ -1,0 +1,116 @@
+Delivered-To: shi.b@husky.neu.edu
+Received: by 10.103.147.17 with SMTP id v17csp11662vsd;
+        Thu, 22 Mar 2018 21:20:38 -0700 (PDT)
+X-Google-Smtp-Source: AG47ELt0aAgwGus6YTdUS+WjqwQbaOjUeXGUht/2viliLMIeVe0qK7jYWMf2NzM5m2rQHWogKxCI
+X-Received: by 10.223.195.116 with SMTP id e49mr21041239wrg.5.1521778838199;
+        Thu, 22 Mar 2018 21:20:38 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1521778838; cv=none;
+        d=google.com; s=arc-20160816;
+        b=vLf86skR+vQ7HJRfskW8g8sl9HVuxVpSOofUCA5t4P28bQUlYXu2ZPduTFMrx1PtFV
+         8BCkBLF98EslwlHLLvtYU4m8c2QC3hT4M+FFnytC4wpSHdS5vO8/K3Km+W72jpTl+sDb
+         Z4Mggc36RmtFXhVden4gWAemwSbpX9NJ0a9gdzxKK5m/p1xuU2+fiH8aEgG2ghLQRZT9
+         jUQgADzkCpt4B1s8/ndUjPm5/eyUDCC8IvH1SRpfyiaZZ4a+Q4d52Q+Zu2njGSCyKE9S
+         uKEV9vf7N1+R5FR2SvgCf9mb+xhtqAoagsH8oV+nOWtzLYJq5c5bI5KjQJ1Ii1eT10ab
+         Kp7Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:subject:message-id:to:from:date
+         :arc-authentication-results;
+        bh=Mfyt2OynA9Vs2zZBbBEmbu9ObSiucBC6mDGftELzR7M=;
+        b=J86da4ootusYdqIdrceo5CJIEZdW0LcE5VIYTOcWVXuCnKKFy78laHQwN9uDNOvTpn
+         /s66MREmbquATHEL/vVuEhwZFipicT/1r4bLZuzE6w/StECaEVA2eU/Zica0J27b/CrI
+         GoaiN+6GaTaiYWeauSDZckA9yMkEhYQxYzLVafstWhCvRKMkBXqBbIkfwobJzjFF8aPc
+         ba6vsAYcnABJ5sHwebS9D96LTBLzR718Cy1tOC0TMtYkqXVvts21cbNv2kJCJPbKbWVr
+         kSywTn/BVUVZDGPgcJ0IIimCJ5XFqZP0y/s680/+jyjH5NGmROlIBcPDjR2zKy9uDlK1
+         TEUA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=permerror (google.com: permanent error in processing during lookup of y.ozbek@northeastern.edu: _spf3.northeastern.edu not found) smtp.mailfrom=y.ozbek@northeastern.edu
+Return-Path: <y.ozbek@northeastern.edu>
+Received: from mail-relay8-cse1.blackboard.com (mail-relay8-cse1.blackboard.com. [69.196.242.138])
+        by mx.google.com with ESMTPS id 63si1469487wmp.160.2018.03.22.21.20.37
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 22 Mar 2018 21:20:38 -0700 (PDT)
+Received-SPF: permerror (google.com: permanent error in processing during lookup of y.ozbek@northeastern.edu: _spf3.northeastern.edu not found) client-ip=54.85.76.43;
+Authentication-Results: mx.google.com;
+       spf=permerror (google.com: permanent error in processing during lookup of y.ozbek@northeastern.edu: _spf3.northeastern.edu not found) smtp.mailfrom=y.ozbek@northeastern.edu
+Received: from ip-10-145-84-199.ec2.internal (ec2-54-85-76-43.compute-1.amazonaws.com [54.85.76.43])
+	by mail-relay6-cse1.blackboard.com (Sentrion-MTA-4.3.2/Sentrion-MTA-4.3.2) with ESMTP id w2N4KY0W008927;
+	Fri, 23 Mar 2018 04:20:35 GMT
+Date: Fri, 23 Mar 2018 00:20:34 -0400 (EDT)
+From: "Yusuf Ozbek - y.ozbek@northeastern.edu" <y.ozbek@northeastern.edu>
+To: "INFO7250.37522.201830":;
+Message-ID: <1888892456.17191.1521778836124.JavaMail.bbuser@ip-10-145-84-199.ec2.internal>
+Subject: INFO7250 37522 Engineering Big-Data Systems SEC 01 - Spring 2018
+ (INFO7250.37522.201830): About HW5
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_17189_680103705.1521778834851"
+
+------=_Part_17189_680103705.1521778834851
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Part 2. Use a Custom Writable object with 3 attributes, that will be used as a value.
+KEY: stock_symbol
+VALUE: CustomWritableObject
+
+Part 3. In the previous assignment, we wrote a MapReduce to find the access count for each IP Address.
+MapReduce framework sorts the values based on the key.
+In this part, we use Secondary Sorting to sort he values based on the access date.
+KEY: {IP, access-date}
+VALUE: 1
+
+We need to define
+- Composite Key Comparator using the 2nd part of the Composite Key
+- Natural Key Grouping using the 1st part of the key.
+
+Attached is additional reference material on Secondary Sorting.
+
+Part 4. Write a MapReduce to determine the average stock price, but we want to use an implementation in which a Combiner could be used. Refer to the slides.
+
+Part 5. Determine the Median and Std Dev.
+The easiest way to do this would be let the Mapper emit key value pairs, and then in the Reducer insert all the values of each key in a Java Collection object.
+Finally, you loop through the collection object to calculate the required statistical measures.
+Refer to the slides
+
+Part 6. Redo Part 5, but keep frequency of each rating to avoid memory issues.
+Refer to the slides.
+
+Let me know if you have any questions or concerns.
+Contact me via the followingws
+- email at y.ozbek@neu.edu
+- WhatsApp at 714-261-7668
+- Skype at ysf-seattle-spr2018@outlook.com
+
+Don't hesitate to contact me whether it is course related or not.
+
+Even if you are feeling lonely, and want to say hi, do not hesitate.
+
+Yusuf Ozbek
+------=_Part_17189_680103705.1521778834851
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<p>Part 2. Use a Custom Writable object with 3 attributes, that will be use=
+d as a value.<br />KEY: stock_symbol<br />VALUE: CustomWritableObject<br />=
+<br />Part 3. In the previous assignment, we wrote a MapReduce to find the =
+access count for each IP Address.<br />MapReduce framework sorts the values=
+ based on the key.<br />In this part, we use Secondary Sorting to sort he v=
+alues based on the access date.<br />KEY: {IP, access-date}<br />VALUE: 1<b=
+r /><br />We need to define<br />- Composite Key Comparator using the 2nd p=
+art of the Composite Key<br />- Natural Key Grouping using the 1st part of =
+the key.<br /><br />Attached is additional reference material on Secondary =
+Sorting.<br /><br />Part 4. Write a MapReduce to determine the average stoc=
+k price, but we want to use an implementation in which a Combiner could be =
+used. Refer to the slides.<br /><br />Part 5. Determine the Median and Std =
+Dev.<br />The easiest way to do this would be let the Mapper emit key value=
+ pairs, and then in the Reducer insert all the values of each key in a Java=
+ Collection object.<br />Finally, you loop through the collection object to=
+ calculate the required statistical measures.<br />Refer to the slides<br /=
+><br />Part 6. Redo Part 5, but keep frequency of each rating to avoid memo=
+ry issues.<br />Refer to the slides.<br /><br />Let me know if you have any=
+ questions or concerns.<br />Contact me via the followingws<br />- email at=
+ y.ozbek@neu.edu<br />- WhatsApp at 714-261-7668<br />- Skype at ysf-seattl=
+e-spr2018@outlook.com<br /><br />Don't hesitate to contact me whether it is=
+ course related or not.<br /><br />Even if you are feeling lonely, and want=
+ to say hi, do not hesitate.<br /><br />Yusuf Ozbek</p>
+------=_Part_17189_680103705.1521778834851--
