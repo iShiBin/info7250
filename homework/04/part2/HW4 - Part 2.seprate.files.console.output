@@ -1,0 +1,1921 @@
+ubuntu@ip-172-31-25-109:~/documents/info7250/src$ hadoop jar stock.jar StockMR nyse/input nyse/output
+2018-02-20 19:49:42,544 INFO beanutils.FluentPropertyBeanIntrospector: Error when creating PropertyDescriptor for public final void org.apache.commons.configuration2.AbstractConfiguration.setProperty(java.lang.String,java.lang.Object)! Ignoring this property.
+2018-02-20 19:49:42,624 INFO impl.MetricsConfig: loaded properties from hadoop-metrics2.properties
+2018-02-20 19:49:42,684 INFO impl.MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+2018-02-20 19:49:42,684 INFO impl.MetricsSystemImpl: JobTracker metrics system started
+2018-02-20 19:49:42,817 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+2018-02-20 19:49:42,942 INFO input.FileInputFormat: Total input files to process : 36
+2018-02-20 19:49:42,967 INFO mapreduce.JobSubmitter: number of splits:36
+2018-02-20 19:49:43,080 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_local1963894680_0001
+2018-02-20 19:49:43,081 INFO mapreduce.JobSubmitter: Executing with tokens: []
+2018-02-20 19:49:43,203 INFO mapreduce.Job: The url to track the job: http://localhost:8080/
+2018-02-20 19:49:43,204 INFO mapreduce.Job: Running job: job_local1963894680_0001
+2018-02-20 19:49:43,214 INFO mapred.LocalJobRunner: OutputCommitter set in config null
+2018-02-20 19:49:43,218 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:49:43,218 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:49:43,220 INFO mapred.LocalJobRunner: OutputCommitter is org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+2018-02-20 19:49:43,268 INFO mapred.LocalJobRunner: Waiting for map tasks
+2018-02-20 19:49:43,268 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000000_0
+2018-02-20 19:49:43,286 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:49:43,286 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:49:43,298 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:49:43,301 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_C.csv:0+45790126
+2018-02-20 19:49:43,341 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:49:43,341 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:49:43,341 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:49:43,341 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:49:43,341 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:49:43,344 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:49:44,266 INFO mapreduce.Job: Job job_local1963894680_0001 running in uber mode : false
+2018-02-20 19:49:44,267 INFO mapreduce.Job:  map 0% reduce 0%
+2018-02-20 19:49:44,685 INFO mapred.LocalJobRunner:
+2018-02-20 19:49:44,690 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:49:44,690 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:49:44,690 INFO mapred.MapTask: bufstart = 0; bufend = 9860378; bufvoid = 104857600
+2018-02-20 19:49:44,690 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 22910660(91642640); length = 3303737/6553600
+2018-02-20 19:49:45,378 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:49:45,386 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000000_0 is done. And is in the process of committing
+2018-02-20 19:49:45,392 INFO mapred.LocalJobRunner: map
+2018-02-20 19:49:45,393 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000000_0' done.
+2018-02-20 19:49:45,405 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000000_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=8544
+		FILE: Number of bytes written=11996051
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=45790126
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=5
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=825935
+		Map output records=825935
+		Map output bytes=9860378
+		Map output materialized bytes=11512254
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=825935
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=92
+		Total committed heap usage (bytes)=424673280
+	File Input Format Counters
+		Bytes Read=45790126
+2018-02-20 19:49:45,405 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000000_0
+2018-02-20 19:49:45,406 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000001_0
+2018-02-20 19:49:45,407 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:49:45,407 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:49:45,407 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:49:45,408 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_A.csv:0+40990862
+2018-02-20 19:49:45,429 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:49:45,430 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:49:45,430 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:49:45,430 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:49:45,430 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:49:45,433 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:49:46,269 INFO mapreduce.Job:  map 100% reduce 0%
+2018-02-20 19:49:46,407 INFO mapred.LocalJobRunner:
+2018-02-20 19:49:46,407 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:49:46,407 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:49:46,408 INFO mapred.MapTask: bufstart = 0; bufend = 8781587; bufvoid = 104857600
+2018-02-20 19:49:46,408 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 23274296(93097184); length = 2940101/6553600
+2018-02-20 19:49:46,857 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:49:46,859 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000001_0 is done. And is in the process of committing
+2018-02-20 19:49:46,861 INFO mapred.LocalJobRunner: map
+2018-02-20 19:49:46,861 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000001_0' done.
+2018-02-20 19:49:46,862 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000001_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=12688
+		FILE: Number of bytes written=22247728
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=86780988
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=7
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=735026
+		Map output records=735026
+		Map output bytes=8781587
+		Map output materialized bytes=10251645
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=735026
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=143
+		Total committed heap usage (bytes)=589824000
+	File Input Format Counters
+		Bytes Read=40990862
+2018-02-20 19:49:46,862 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000001_0
+2018-02-20 19:49:46,862 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000002_0
+2018-02-20 19:49:46,865 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:49:46,865 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:49:46,865 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:49:46,866 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_M.csv:0+38124415
+2018-02-20 19:49:46,885 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:49:46,885 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:49:46,885 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:49:46,885 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:49:46,885 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:49:46,885 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:49:47,672 INFO mapred.LocalJobRunner:
+2018-02-20 19:49:47,672 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:49:47,672 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:49:47,672 INFO mapred.MapTask: bufstart = 0; bufend = 8237022; bufvoid = 104857600
+2018-02-20 19:49:47,672 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 23455600(93822400); length = 2758797/6553600
+2018-02-20 19:49:48,076 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:49:48,086 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000002_0 is done. And is in the process of committing
+2018-02-20 19:49:48,090 INFO mapred.LocalJobRunner: map
+2018-02-20 19:49:48,090 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000002_0' done.
+2018-02-20 19:49:48,090 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000002_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=16832
+		FILE: Number of bytes written=31864188
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=124905403
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=9
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=689700
+		Map output records=689700
+		Map output bytes=8237022
+		Map output materialized bytes=9616428
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=689700
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=97
+		Total committed heap usage (bytes)=666370048
+	File Input Format Counters
+		Bytes Read=38124415
+2018-02-20 19:49:48,090 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000002_0
+2018-02-20 19:49:48,090 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000003_0
+2018-02-20 19:49:48,091 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:49:48,091 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:49:48,091 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:49:48,092 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_B.csv:0+32034630
+2018-02-20 19:49:48,115 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:49:48,115 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:49:48,116 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:49:48,116 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:49:48,116 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:49:48,120 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:49:48,764 INFO mapred.LocalJobRunner:
+2018-02-20 19:49:48,764 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:49:48,764 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:49:48,764 INFO mapred.MapTask: bufstart = 0; bufend = 6875579; bufvoid = 104857600
+2018-02-20 19:49:48,764 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 23906068(95624272); length = 2308329/6553600
+2018-02-20 19:49:49,091 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:49:49,093 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000003_0 is done. And is in the process of committing
+2018-02-20 19:49:49,095 INFO mapred.LocalJobRunner: map
+2018-02-20 19:49:49,095 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000003_0' done.
+2018-02-20 19:49:49,095 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000003_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=20976
+		FILE: Number of bytes written=39893971
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=156940033
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=11
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=577083
+		Map output records=577083
+		Map output bytes=6875579
+		Map output materialized bytes=8029751
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=577083
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=58
+		Total committed heap usage (bytes)=722468864
+	File Input Format Counters
+		Bytes Read=32034630
+2018-02-20 19:49:49,096 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000003_0
+2018-02-20 19:49:49,096 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000004_0
+2018-02-20 19:49:49,096 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:49:49,096 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:49:49,097 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:49:49,098 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_P.csv:0+31943348
+2018-02-20 19:49:49,119 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:49:49,120 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:49:49,120 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:49:49,120 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:49:49,120 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:49:49,123 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:49:49,753 INFO mapred.LocalJobRunner:
+2018-02-20 19:49:49,754 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:49:49,754 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:49:49,755 INFO mapred.MapTask: bufstart = 0; bufend = 6873839; bufvoid = 104857600
+2018-02-20 19:49:49,755 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 23909856(95639424); length = 2304541/6553600
+2018-02-20 19:49:50,101 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:49:50,102 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000004_0 is done. And is in the process of committing
+2018-02-20 19:49:50,108 INFO mapred.LocalJobRunner: map
+2018-02-20 19:49:50,108 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000004_0' done.
+2018-02-20 19:49:50,108 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000004_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=25120
+		FILE: Number of bytes written=47920120
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=188883381
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=13
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=576136
+		Map output records=576136
+		Map output bytes=6873839
+		Map output materialized bytes=8026117
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=576136
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=57
+		Total committed heap usage (bytes)=776994816
+	File Input Format Counters
+		Bytes Read=31943348
+2018-02-20 19:49:50,108 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000004_0
+2018-02-20 19:49:50,108 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000005_0
+2018-02-20 19:49:50,112 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:49:50,112 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:49:50,113 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:49:50,113 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_S.csv:0+31852223
+2018-02-20 19:49:50,134 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:49:50,134 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:49:50,134 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:49:50,134 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:49:50,134 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:49:50,135 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:49:50,762 INFO mapred.LocalJobRunner:
+2018-02-20 19:49:50,762 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:49:50,762 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:49:50,762 INFO mapred.MapTask: bufstart = 0; bufend = 6844009; bufvoid = 104857600
+2018-02-20 19:49:50,762 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 23922904(95691616); length = 2291493/6553600
+2018-02-20 19:49:51,106 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:49:51,107 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000005_0 is done. And is in the process of committing
+2018-02-20 19:49:51,109 INFO mapred.LocalJobRunner: map
+2018-02-20 19:49:51,109 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000005_0' done.
+2018-02-20 19:49:51,109 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000005_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=29264
+		FILE: Number of bytes written=55909915
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=220735604
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=15
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=572874
+		Map output records=572874
+		Map output bytes=6844009
+		Map output materialized bytes=7989763
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=572874
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=57
+		Total committed heap usage (bytes)=820510720
+	File Input Format Counters
+		Bytes Read=31852223
+2018-02-20 19:49:51,110 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000005_0
+2018-02-20 19:49:51,110 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000006_0
+2018-02-20 19:49:51,111 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:49:51,111 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:49:51,111 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:49:51,112 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_N.csv:0+31488815
+2018-02-20 19:49:51,132 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:49:51,133 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:49:51,133 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:49:51,133 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:49:51,133 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:49:51,133 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:49:51,757 INFO mapred.LocalJobRunner:
+2018-02-20 19:49:51,757 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:49:51,757 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:49:51,757 INFO mapred.MapTask: bufstart = 0; bufend = 6803393; bufvoid = 104857600
+2018-02-20 19:49:51,757 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 23929976(95719904); length = 2284421/6553600
+2018-02-20 19:49:52,081 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:49:52,082 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000006_0 is done. And is in the process of committing
+2018-02-20 19:49:52,085 INFO mapred.LocalJobRunner: map
+2018-02-20 19:49:52,085 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000006_0' done.
+2018-02-20 19:49:52,085 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000006_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=33408
+		FILE: Number of bytes written=63855558
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=252224419
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=17
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=571106
+		Map output records=571106
+		Map output bytes=6803393
+		Map output materialized bytes=7945611
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=571106
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=56
+		Total committed heap usage (bytes)=861405184
+	File Input Format Counters
+		Bytes Read=31488815
+2018-02-20 19:49:52,085 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000006_0
+2018-02-20 19:49:52,085 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000007_0
+2018-02-20 19:49:52,088 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:49:52,088 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:49:52,088 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:49:52,089 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_T.csv:0+28754560
+2018-02-20 19:49:52,109 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:49:52,110 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:49:52,110 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:49:52,110 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:49:52,110 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:49:52,110 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:49:52,682 INFO mapred.LocalJobRunner:
+2018-02-20 19:49:52,682 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:49:52,682 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:49:52,682 INFO mapred.MapTask: bufstart = 0; bufend = 6170983; bufvoid = 104857600
+2018-02-20 19:49:52,683 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 24141944(96567776); length = 2072453/6553600
+2018-02-20 19:49:52,990 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:49:52,992 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000007_0 is done. And is in the process of committing
+2018-02-20 19:49:52,994 INFO mapred.LocalJobRunner: map
+2018-02-20 19:49:52,994 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000007_0' done.
+2018-02-20 19:49:52,995 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000007_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=37552
+		FILE: Number of bytes written=71062807
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=280978979
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=19
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=518114
+		Map output records=518114
+		Map output bytes=6170983
+		Map output materialized bytes=7207217
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=518114
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=58
+		Total committed heap usage (bytes)=896008192
+	File Input Format Counters
+		Bytes Read=28754560
+2018-02-20 19:49:52,995 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000007_0
+2018-02-20 19:49:52,995 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000008_0
+2018-02-20 19:49:52,997 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:49:52,997 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:49:52,998 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:49:52,998 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_H.csv:0+23127013
+2018-02-20 19:49:53,017 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:49:53,017 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:49:53,017 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:49:53,017 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:49:53,017 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:49:53,018 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:49:53,493 INFO mapred.LocalJobRunner:
+2018-02-20 19:49:53,494 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:49:53,494 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:49:53,494 INFO mapred.MapTask: bufstart = 0; bufend = 4978654; bufvoid = 104857600
+2018-02-20 19:49:53,494 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 24542172(98168688); length = 1672225/6553600
+2018-02-20 19:49:53,737 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:49:53,739 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000008_0 is done. And is in the process of committing
+2018-02-20 19:49:53,743 INFO mapred.LocalJobRunner: map
+2018-02-20 19:49:53,743 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000008_0' done.
+2018-02-20 19:49:53,745 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000008_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=41371
+		FILE: Number of bytes written=76877613
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=304105992
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=21
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=418057
+		Map output records=418057
+		Map output bytes=4978654
+		Map output materialized bytes=5814774
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=418057
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=56
+		Total committed heap usage (bytes)=940048384
+	File Input Format Counters
+		Bytes Read=23127013
+2018-02-20 19:49:53,745 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000008_0
+2018-02-20 19:49:53,745 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000009_0
+2018-02-20 19:49:53,752 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:49:53,752 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:49:53,752 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:49:53,753 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_G.csv:0+22608392
+2018-02-20 19:49:53,772 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:49:53,772 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:49:53,772 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:49:53,772 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:49:53,772 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:49:53,773 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:49:54,241 INFO mapred.LocalJobRunner:
+2018-02-20 19:49:54,241 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:49:54,241 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:49:54,241 INFO mapred.MapTask: bufstart = 0; bufend = 4869383; bufvoid = 104857600
+2018-02-20 19:49:54,241 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 24572892(98291568); length = 1641505/6553600
+2018-02-20 19:49:54,273 INFO mapreduce.Job:  map 25% reduce 0%
+2018-02-20 19:49:54,482 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:49:54,483 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000009_0 is done. And is in the process of committing
+2018-02-20 19:49:54,487 INFO mapred.LocalJobRunner: map
+2018-02-20 19:49:54,487 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000009_0' done.
+2018-02-20 19:49:54,490 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000009_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=45190
+		FILE: Number of bytes written=82567788
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=326714384
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=23
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=410377
+		Map output records=410377
+		Map output bytes=4869383
+		Map output materialized bytes=5690143
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=410377
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=57
+		Total committed heap usage (bytes)=980418560
+	File Input Format Counters
+		Bytes Read=22608392
+2018-02-20 19:49:54,490 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000009_0
+2018-02-20 19:49:54,490 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000010_0
+2018-02-20 19:49:54,491 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:49:54,491 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:49:54,492 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:49:54,493 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_E.csv:0+22103913
+2018-02-20 19:49:54,514 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:49:54,514 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:49:54,514 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:49:54,514 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:49:54,514 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:49:54,515 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:49:54,975 INFO mapred.LocalJobRunner:
+2018-02-20 19:49:54,975 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:49:54,975 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:49:54,975 INFO mapred.MapTask: bufstart = 0; bufend = 4716690; bufvoid = 104857600
+2018-02-20 19:49:54,975 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 24627468(98509872); length = 1586929/6553600
+2018-02-20 19:49:55,207 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:49:55,208 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000010_0 is done. And is in the process of committing
+2018-02-20 19:49:55,210 INFO mapred.LocalJobRunner: map
+2018-02-20 19:49:55,210 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000010_0' done.
+2018-02-20 19:49:55,210 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000010_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=49009
+		FILE: Number of bytes written=88077982
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=348818297
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=25
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=396733
+		Map output records=396733
+		Map output bytes=4716690
+		Map output materialized bytes=5510162
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=396733
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=63
+		Total committed heap usage (bytes)=1021837312
+	File Input Format Counters
+		Bytes Read=22103913
+2018-02-20 19:49:55,210 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000010_0
+2018-02-20 19:49:55,210 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000011_0
+2018-02-20 19:49:55,212 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:49:55,212 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:49:55,212 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:49:55,213 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_I.csv:0+20679903
+2018-02-20 19:49:55,231 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:49:55,231 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:49:55,231 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:49:55,231 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:49:55,231 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:49:55,232 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:49:55,299 INFO mapreduce.Job:  map 100% reduce 0%
+2018-02-20 19:49:55,659 INFO mapred.LocalJobRunner:
+2018-02-20 19:49:55,659 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:49:55,659 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:49:55,659 INFO mapred.MapTask: bufstart = 0; bufend = 4409328; bufvoid = 104857600
+2018-02-20 19:49:55,659 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 24732728(98930912); length = 1481669/6553600
+2018-02-20 19:49:55,868 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:49:55,870 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000011_0 is done. And is in the process of committing
+2018-02-20 19:49:55,871 INFO mapred.LocalJobRunner: map
+2018-02-20 19:49:55,871 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000011_0' done.
+2018-02-20 19:49:55,872 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000011_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=52828
+		FILE: Number of bytes written=93228184
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=369498200
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=27
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=370418
+		Map output records=370418
+		Map output bytes=4409328
+		Map output materialized bytes=5150170
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=370418
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=57
+		Total committed heap usage (bytes)=1032323072
+	File Input Format Counters
+		Bytes Read=20679903
+2018-02-20 19:49:55,872 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000011_0
+2018-02-20 19:49:55,872 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000012_0
+2018-02-20 19:49:55,877 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:49:55,877 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:49:55,877 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:49:55,878 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_D.csv:0+19234341
+2018-02-20 19:49:55,896 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:49:55,896 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:49:55,896 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:49:55,896 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:49:55,896 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:49:55,897 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:49:56,297 INFO mapred.LocalJobRunner:
+2018-02-20 19:49:56,297 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:49:56,297 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:49:56,297 INFO mapred.MapTask: bufstart = 0; bufend = 4097507; bufvoid = 104857600
+2018-02-20 19:49:56,297 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 24830936(99323744); length = 1383461/6553600
+2018-02-20 19:49:56,301 INFO mapreduce.Job:  map 33% reduce 0%
+2018-02-20 19:49:56,492 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:49:56,493 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000012_0 is done. And is in the process of committing
+2018-02-20 19:49:56,495 INFO mapred.LocalJobRunner: map
+2018-02-20 19:49:56,495 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000012_0' done.
+2018-02-20 19:49:56,495 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000012_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=56135
+		FILE: Number of bytes written=98017461
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=388732541
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=29
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=345866
+		Map output records=345866
+		Map output bytes=4097507
+		Map output materialized bytes=4789245
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=345866
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=56
+		Total committed heap usage (bytes)=1033371648
+	File Input Format Counters
+		Bytes Read=19234341
+2018-02-20 19:49:56,495 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000012_0
+2018-02-20 19:49:56,495 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000013_0
+2018-02-20 19:49:56,496 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:49:56,496 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:49:56,496 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:49:56,497 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_F.csv:0+17387123
+2018-02-20 19:49:56,515 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:49:56,515 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:49:56,515 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:49:56,515 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:49:56,515 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:49:56,516 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:49:56,881 INFO mapred.LocalJobRunner:
+2018-02-20 19:49:56,881 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:49:56,881 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:49:56,881 INFO mapred.MapTask: bufstart = 0; bufend = 3723534; bufvoid = 104857600
+2018-02-20 19:49:56,881 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 24961156(99844624); length = 1253241/6553600
+2018-02-20 19:49:57,051 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:49:57,052 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000013_0 is done. And is in the process of committing
+2018-02-20 19:49:57,055 INFO mapred.LocalJobRunner: map
+2018-02-20 19:49:57,055 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000013_0' done.
+2018-02-20 19:49:57,055 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000013_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=59442
+		FILE: Number of bytes written=102367655
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=406119664
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=31
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=313311
+		Map output records=313311
+		Map output bytes=3723534
+		Map output materialized bytes=4350162
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=313311
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=54
+		Total committed heap usage (bytes)=1034420224
+	File Input Format Counters
+		Bytes Read=17387123
+2018-02-20 19:49:57,055 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000013_0
+2018-02-20 19:49:57,057 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000014_0
+2018-02-20 19:49:57,058 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:49:57,058 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:49:57,058 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:49:57,060 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_R.csv:0+16808465
+2018-02-20 19:49:57,081 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:49:57,081 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:49:57,081 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:49:57,081 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:49:57,081 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:49:57,082 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:49:57,302 INFO mapreduce.Job:  map 100% reduce 0%
+2018-02-20 19:49:57,437 INFO mapred.LocalJobRunner:
+2018-02-20 19:49:57,437 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:49:57,437 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:49:57,437 INFO mapred.MapTask: bufstart = 0; bufend = 3597917; bufvoid = 104857600
+2018-02-20 19:49:57,437 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 25004268(100017072); length = 1210129/6553600
+2018-02-20 19:49:57,603 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:49:57,604 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000014_0 is done. And is in the process of committing
+2018-02-20 19:49:57,606 INFO mapred.LocalJobRunner: map
+2018-02-20 19:49:57,606 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000014_0' done.
+2018-02-20 19:49:57,606 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000014_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=62749
+		FILE: Number of bytes written=106570676
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=422928129
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=33
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=302533
+		Map output records=302533
+		Map output bytes=3597917
+		Map output materialized bytes=4202989
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=302533
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=55
+		Total committed heap usage (bytes)=1033371648
+	File Input Format Counters
+		Bytes Read=16808465
+2018-02-20 19:49:57,606 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000014_0
+2018-02-20 19:49:57,606 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000015_0
+2018-02-20 19:49:57,607 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:49:57,607 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:49:57,607 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:49:57,608 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_W.csv:0+15971883
+2018-02-20 19:49:57,627 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:49:57,627 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:49:57,627 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:49:57,627 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:49:57,627 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:49:57,627 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:49:57,967 INFO mapred.LocalJobRunner:
+2018-02-20 19:49:57,968 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:49:57,968 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:49:57,968 INFO mapred.MapTask: bufstart = 0; bufend = 3387546; bufvoid = 104857600
+2018-02-20 19:49:57,968 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 25074240(100296960); length = 1140157/6553600
+2018-02-20 19:49:58,120 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:49:58,121 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000015_0 is done. And is in the process of committing
+2018-02-20 19:49:58,123 INFO mapred.LocalJobRunner: map
+2018-02-20 19:49:58,123 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000015_0' done.
+2018-02-20 19:49:58,123 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000015_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=66056
+		FILE: Number of bytes written=110528340
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=438900012
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=35
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=285040
+		Map output records=285040
+		Map output bytes=3387546
+		Map output materialized bytes=3957632
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=285040
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=56
+		Total committed heap usage (bytes)=1034944512
+	File Input Format Counters
+		Bytes Read=15971883
+2018-02-20 19:49:58,123 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000015_0
+2018-02-20 19:49:58,123 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000016_0
+2018-02-20 19:49:58,124 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:49:58,124 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:49:58,124 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:49:58,125 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_K.csv:0+14782762
+2018-02-20 19:49:58,143 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:49:58,143 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:49:58,143 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:49:58,143 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:49:58,143 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:49:58,147 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:49:58,481 INFO mapred.LocalJobRunner:
+2018-02-20 19:49:58,481 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:49:58,481 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:49:58,481 INFO mapred.MapTask: bufstart = 0; bufend = 3174898; bufvoid = 104857600
+2018-02-20 19:49:58,481 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 25144604(100578416); length = 1069793/6553600
+2018-02-20 19:49:58,633 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:49:58,634 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000016_0 is done. And is in the process of committing
+2018-02-20 19:49:58,636 INFO mapred.LocalJobRunner: map
+2018-02-20 19:49:58,636 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000016_0' done.
+2018-02-20 19:49:58,636 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000016_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=68851
+		FILE: Number of bytes written=114238174
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=453682774
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=37
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=267449
+		Map output records=267449
+		Map output bytes=3174898
+		Map output materialized bytes=3709802
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=267449
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=55
+		Total committed heap usage (bytes)=1034944512
+	File Input Format Counters
+		Bytes Read=14782762
+2018-02-20 19:49:58,636 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000016_0
+2018-02-20 19:49:58,636 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000017_0
+2018-02-20 19:49:58,638 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:49:58,638 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:49:58,639 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:49:58,639 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_L.csv:0+12958655
+2018-02-20 19:49:58,657 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:49:58,657 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:49:58,657 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:49:58,657 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:49:58,657 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:49:58,658 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:49:58,945 INFO mapred.LocalJobRunner:
+2018-02-20 19:49:58,945 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:49:58,945 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:49:58,945 INFO mapred.MapTask: bufstart = 0; bufend = 2756289; bufvoid = 104857600
+2018-02-20 19:49:58,945 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 25283612(101134448); length = 930785/6553600
+2018-02-20 19:49:59,069 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:49:59,070 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000017_0 is done. And is in the process of committing
+2018-02-20 19:49:59,072 INFO mapred.LocalJobRunner: map
+2018-02-20 19:49:59,072 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000017_0' done.
+2018-02-20 19:49:59,072 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000017_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=71646
+		FILE: Number of bytes written=117459895
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=466641429
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=39
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=232697
+		Map output records=232697
+		Map output bytes=2756289
+		Map output materialized bytes=3221689
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=232697
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=55
+		Total committed heap usage (bytes)=1034944512
+	File Input Format Counters
+		Bytes Read=12958655
+2018-02-20 19:49:59,073 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000017_0
+2018-02-20 19:49:59,073 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000018_0
+2018-02-20 19:49:59,073 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:49:59,073 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:49:59,074 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:49:59,074 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_U.csv:0+9951460
+2018-02-20 19:49:59,098 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:49:59,098 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:49:59,098 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:49:59,098 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:49:59,098 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:49:59,099 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:49:59,334 INFO mapred.LocalJobRunner:
+2018-02-20 19:49:59,335 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:49:59,335 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:49:59,335 INFO mapred.MapTask: bufstart = 0; bufend = 2136422; bufvoid = 104857600
+2018-02-20 19:49:59,335 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 25497972(101991888); length = 716425/6553600
+2018-02-20 19:49:59,357 INFO mapreduce.Job:  map 50% reduce 0%
+2018-02-20 19:49:59,426 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:49:59,427 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000018_0 is done. And is in the process of committing
+2018-02-20 19:49:59,431 INFO mapred.LocalJobRunner: map
+2018-02-20 19:49:59,431 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000018_0' done.
+2018-02-20 19:49:59,433 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000018_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=74441
+		FILE: Number of bytes written=119954569
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=476592889
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=41
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=179107
+		Map output records=179107
+		Map output bytes=2136422
+		Map output materialized bytes=2494642
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=179107
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=57
+		Total committed heap usage (bytes)=1034944512
+	File Input Format Counters
+		Bytes Read=9951460
+2018-02-20 19:49:59,433 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000018_0
+2018-02-20 19:49:59,433 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000019_0
+2018-02-20 19:49:59,434 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:49:59,434 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:49:59,434 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:49:59,434 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_J.csv:0+9537397
+2018-02-20 19:49:59,453 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:49:59,453 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:49:59,453 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:49:59,453 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:49:59,453 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:49:59,453 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:49:59,687 INFO mapred.LocalJobRunner:
+2018-02-20 19:49:59,687 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:49:59,687 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:49:59,687 INFO mapred.MapTask: bufstart = 0; bufend = 2059832; bufvoid = 104857600
+2018-02-20 19:49:59,687 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 25528680(102114720); length = 685717/6553600
+2018-02-20 19:49:59,778 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:49:59,780 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000019_0 is done. And is in the process of committing
+2018-02-20 19:49:59,783 INFO mapred.LocalJobRunner: map
+2018-02-20 19:49:59,783 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000019_0' done.
+2018-02-20 19:49:59,783 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000019_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=77236
+		FILE: Number of bytes written=122357299
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=486130286
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=43
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=171430
+		Map output records=171430
+		Map output bytes=2059832
+		Map output materialized bytes=2402698
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=171430
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=56
+		Total committed heap usage (bytes)=1034944512
+	File Input Format Counters
+		Bytes Read=9537397
+2018-02-20 19:49:59,783 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000019_0
+2018-02-20 19:49:59,783 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000020_0
+2018-02-20 19:49:59,785 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:49:59,785 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:49:59,785 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:49:59,785 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_V.csv:0+9503066
+2018-02-20 19:49:59,804 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:49:59,804 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:49:59,804 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:49:59,804 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:49:59,804 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:49:59,804 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:50:00,033 INFO mapred.LocalJobRunner:
+2018-02-20 19:50:00,033 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:50:00,033 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:50:00,033 INFO mapred.MapTask: bufstart = 0; bufend = 2047659; bufvoid = 104857600
+2018-02-20 19:50:00,033 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 25528328(102113312); length = 686069/6553600
+2018-02-20 19:50:00,128 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:50:00,129 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000020_0 is done. And is in the process of committing
+2018-02-20 19:50:00,130 INFO mapred.LocalJobRunner: map
+2018-02-20 19:50:00,131 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000020_0' done.
+2018-02-20 19:50:00,131 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000020_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=79519
+		FILE: Number of bytes written=124748032
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=495633352
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=45
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=171518
+		Map output records=171518
+		Map output bytes=2047659
+		Map output materialized bytes=2390701
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=171518
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=57
+		Total committed heap usage (bytes)=1034944512
+	File Input Format Counters
+		Bytes Read=9503066
+2018-02-20 19:50:00,132 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000020_0
+2018-02-20 19:50:00,132 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000021_0
+2018-02-20 19:50:00,132 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:50:00,132 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:50:00,132 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:50:00,133 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_O.csv:0+8865588
+2018-02-20 19:50:00,151 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:50:00,151 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:50:00,151 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:50:00,151 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:50:00,151 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:50:00,151 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:50:00,358 INFO mapreduce.Job:  map 100% reduce 0%
+2018-02-20 19:50:00,370 INFO mapred.LocalJobRunner:
+2018-02-20 19:50:00,370 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:50:00,370 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:50:00,370 INFO mapred.MapTask: bufstart = 0; bufend = 1923980; bufvoid = 104857600
+2018-02-20 19:50:00,370 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 25571004(102284016); length = 643393/6553600
+2018-02-20 19:50:00,457 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:50:00,458 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000021_0 is done. And is in the process of committing
+2018-02-20 19:50:00,460 INFO mapred.LocalJobRunner: map
+2018-02-20 19:50:00,460 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000021_0' done.
+2018-02-20 19:50:00,461 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000021_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=81802
+		FILE: Number of bytes written=126993748
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=504498940
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=47
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=160849
+		Map output records=160849
+		Map output bytes=1923980
+		Map output materialized bytes=2245684
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=160849
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=54
+		Total committed heap usage (bytes)=1034944512
+	File Input Format Counters
+		Bytes Read=8865588
+2018-02-20 19:50:00,461 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000021_0
+2018-02-20 19:50:00,461 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000022_0
+2018-02-20 19:50:00,462 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:50:00,462 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:50:00,462 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:50:00,463 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_X.csv:0+3613068
+2018-02-20 19:50:00,481 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:50:00,482 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:50:00,482 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:50:00,482 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:50:00,482 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:50:00,482 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:50:00,549 INFO mapred.LocalJobRunner:
+2018-02-20 19:50:00,549 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:50:00,549 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:50:00,549 INFO mapred.MapTask: bufstart = 0; bufend = 775563; bufvoid = 104857600
+2018-02-20 19:50:00,549 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 25954320(103817280); length = 260077/6553600
+2018-02-20 19:50:00,583 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:50:00,584 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000022_0 is done. And is in the process of committing
+2018-02-20 19:50:00,586 INFO mapred.LocalJobRunner: map
+2018-02-20 19:50:00,586 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000022_0' done.
+2018-02-20 19:50:00,586 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000022_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=84085
+		FILE: Number of bytes written=127899389
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=508112008
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=49
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=65020
+		Map output records=65020
+		Map output bytes=775563
+		Map output materialized bytes=905609
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=65020
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=1034944512
+	File Input Format Counters
+		Bytes Read=3613068
+2018-02-20 19:50:00,586 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000022_0
+2018-02-20 19:50:00,586 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000023_0
+2018-02-20 19:50:00,588 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:50:00,588 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:50:00,588 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:50:00,589 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_Z.csv:0+2093294
+2018-02-20 19:50:00,609 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:50:00,609 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:50:00,609 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:50:00,609 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:50:00,609 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:50:00,611 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:50:00,656 INFO mapred.LocalJobRunner:
+2018-02-20 19:50:00,656 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:50:00,656 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:50:00,656 INFO mapred.MapTask: bufstart = 0; bufend = 459309; bufvoid = 104857600
+2018-02-20 19:50:00,656 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 26059120(104236480); length = 155277/6553600
+2018-02-20 19:50:00,677 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:50:00,678 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000023_0 is done. And is in the process of committing
+2018-02-20 19:50:00,680 INFO mapred.LocalJobRunner: map
+2018-02-20 19:50:00,680 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000023_0' done.
+2018-02-20 19:50:00,680 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000023_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=86368
+		FILE: Number of bytes written=128436376
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=510205302
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=51
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=38820
+		Map output records=38820
+		Map output bytes=459309
+		Map output materialized bytes=536955
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=38820
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=2
+		Total committed heap usage (bytes)=1034944512
+	File Input Format Counters
+		Bytes Read=2093294
+2018-02-20 19:50:00,681 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000023_0
+2018-02-20 19:50:00,681 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000024_0
+2018-02-20 19:50:00,681 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:50:00,681 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:50:00,681 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:50:00,682 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_Y.csv:0+686086
+2018-02-20 19:50:00,700 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:50:00,700 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:50:00,700 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:50:00,700 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:50:00,700 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:50:00,701 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:50:00,716 INFO mapred.LocalJobRunner:
+2018-02-20 19:50:00,716 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:50:00,716 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:50:00,716 INFO mapred.MapTask: bufstart = 0; bufend = 146808; bufvoid = 104857600
+2018-02-20 19:50:00,716 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 26165464(104661856); length = 48933/6553600
+2018-02-20 19:50:00,726 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:50:00,727 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000024_0 is done. And is in the process of committing
+2018-02-20 19:50:00,729 INFO mapred.LocalJobRunner: map
+2018-02-20 19:50:00,729 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000024_0' done.
+2018-02-20 19:50:00,729 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000024_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=88139
+		FILE: Number of bytes written=128607690
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=510891388
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=53
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=12234
+		Map output records=12234
+		Map output bytes=146808
+		Map output materialized bytes=171282
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=12234
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=1034944512
+	File Input Format Counters
+		Bytes Read=686086
+2018-02-20 19:50:00,729 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000024_0
+2018-02-20 19:50:00,729 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000025_0
+2018-02-20 19:50:00,729 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:50:00,729 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:50:00,730 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:50:00,731 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_Q.csv:0+190859
+2018-02-20 19:50:00,752 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:50:00,752 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:50:00,752 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:50:00,752 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:50:00,752 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:50:00,753 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:50:00,759 INFO mapred.LocalJobRunner:
+2018-02-20 19:50:00,759 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:50:00,759 INFO mapred.MapTask: Spilling map output
+2018-02-20 19:50:00,759 INFO mapred.MapTask: bufstart = 0; bufend = 43176; bufvoid = 104857600
+2018-02-20 19:50:00,759 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 26200008(104800032); length = 14389/6553600
+2018-02-20 19:50:00,776 INFO mapred.MapTask: Finished spill 0
+2018-02-20 19:50:00,777 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000025_0 is done. And is in the process of committing
+2018-02-20 19:50:00,782 INFO mapred.LocalJobRunner: map
+2018-02-20 19:50:00,782 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000025_0' done.
+2018-02-20 19:50:00,782 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000025_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=89910
+		FILE: Number of bytes written=128658100
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=511082247
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=55
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=3598
+		Map output records=3598
+		Map output bytes=43176
+		Map output materialized bytes=50378
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=3598
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=2
+		Total committed heap usage (bytes)=1034944512
+	File Input Format Counters
+		Bytes Read=190859
+2018-02-20 19:50:00,782 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000025_0
+2018-02-20 19:50:00,782 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000026_0
+2018-02-20 19:50:00,784 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:50:00,784 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:50:00,784 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:50:00,785 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_0.csv:0+0
+2018-02-20 19:50:00,804 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:50:00,804 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:50:00,804 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:50:00,804 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:50:00,804 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:50:00,804 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:50:00,806 INFO mapred.LocalJobRunner:
+2018-02-20 19:50:00,806 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:50:00,815 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000026_0 is done. And is in the process of committing
+2018-02-20 19:50:00,818 INFO mapred.LocalJobRunner: map
+2018-02-20 19:50:00,818 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000026_0' done.
+2018-02-20 19:50:00,818 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000026_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=91681
+		FILE: Number of bytes written=128658138
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=511082247
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=57
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=0
+		Map output records=0
+		Map output bytes=0
+		Map output materialized bytes=6
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=1034944512
+	File Input Format Counters
+		Bytes Read=0
+2018-02-20 19:50:00,820 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000026_0
+2018-02-20 19:50:00,820 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000027_0
+2018-02-20 19:50:00,820 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:50:00,820 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:50:00,820 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:50:00,821 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_1.csv:0+0
+2018-02-20 19:50:00,841 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:50:00,841 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:50:00,841 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:50:00,841 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:50:00,841 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:50:00,841 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:50:00,844 INFO mapred.LocalJobRunner:
+2018-02-20 19:50:00,844 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:50:00,855 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000027_0 is done. And is in the process of committing
+2018-02-20 19:50:00,856 INFO mapred.LocalJobRunner: map
+2018-02-20 19:50:00,856 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000027_0' done.
+2018-02-20 19:50:00,856 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000027_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=92940
+		FILE: Number of bytes written=128658176
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=511082247
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=59
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=0
+		Map output records=0
+		Map output bytes=0
+		Map output materialized bytes=6
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=1034944512
+	File Input Format Counters
+		Bytes Read=0
+2018-02-20 19:50:00,857 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000027_0
+2018-02-20 19:50:00,857 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000028_0
+2018-02-20 19:50:00,858 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:50:00,858 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:50:00,858 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:50:00,859 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_2.csv:0+0
+2018-02-20 19:50:00,879 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:50:00,879 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:50:00,879 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:50:00,879 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:50:00,879 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:50:00,879 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:50:00,882 INFO mapred.LocalJobRunner:
+2018-02-20 19:50:00,882 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:50:00,903 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000028_0 is done. And is in the process of committing
+2018-02-20 19:50:00,904 INFO mapred.LocalJobRunner: map
+2018-02-20 19:50:00,904 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000028_0' done.
+2018-02-20 19:50:00,904 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000028_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=94199
+		FILE: Number of bytes written=128658214
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=511082247
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=61
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=0
+		Map output records=0
+		Map output bytes=0
+		Map output materialized bytes=6
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=1
+		Total committed heap usage (bytes)=1035468800
+	File Input Format Counters
+		Bytes Read=0
+2018-02-20 19:50:00,904 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000028_0
+2018-02-20 19:50:00,904 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000029_0
+2018-02-20 19:50:00,905 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:50:00,905 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:50:00,905 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:50:00,905 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_3.csv:0+0
+2018-02-20 19:50:00,924 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:50:00,924 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:50:00,924 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:50:00,924 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:50:00,924 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:50:00,924 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:50:00,926 INFO mapred.LocalJobRunner:
+2018-02-20 19:50:00,926 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:50:00,934 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000029_0 is done. And is in the process of committing
+2018-02-20 19:50:00,935 INFO mapred.LocalJobRunner: map
+2018-02-20 19:50:00,936 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000029_0' done.
+2018-02-20 19:50:00,936 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000029_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=95458
+		FILE: Number of bytes written=128658252
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=511082247
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=63
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=0
+		Map output records=0
+		Map output bytes=0
+		Map output materialized bytes=6
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=1035468800
+	File Input Format Counters
+		Bytes Read=0
+2018-02-20 19:50:00,936 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000029_0
+2018-02-20 19:50:00,936 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000030_0
+2018-02-20 19:50:00,936 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:50:00,936 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:50:00,936 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:50:00,937 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_4.csv:0+0
+2018-02-20 19:50:00,955 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:50:00,955 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:50:00,955 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:50:00,955 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:50:00,955 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:50:00,955 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:50:00,958 INFO mapred.LocalJobRunner:
+2018-02-20 19:50:00,958 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:50:00,969 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000030_0 is done. And is in the process of committing
+2018-02-20 19:50:00,971 INFO mapred.LocalJobRunner: map
+2018-02-20 19:50:00,971 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000030_0' done.
+2018-02-20 19:50:00,971 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000030_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=96717
+		FILE: Number of bytes written=128658290
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=511082247
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=65
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=0
+		Map output records=0
+		Map output bytes=0
+		Map output materialized bytes=6
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=1035468800
+	File Input Format Counters
+		Bytes Read=0
+2018-02-20 19:50:00,971 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000030_0
+2018-02-20 19:50:00,971 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000031_0
+2018-02-20 19:50:00,971 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:50:00,971 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:50:00,972 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:50:00,972 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_5.csv:0+0
+2018-02-20 19:50:00,992 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:50:00,992 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:50:00,992 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:50:00,992 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:50:00,992 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:50:00,993 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:50:00,994 INFO mapred.LocalJobRunner:
+2018-02-20 19:50:00,994 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:50:01,003 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000031_0 is done. And is in the process of committing
+2018-02-20 19:50:01,006 INFO mapred.LocalJobRunner: map
+2018-02-20 19:50:01,006 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000031_0' done.
+2018-02-20 19:50:01,007 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000031_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=97464
+		FILE: Number of bytes written=128658328
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=511082247
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=67
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=0
+		Map output records=0
+		Map output bytes=0
+		Map output materialized bytes=6
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=2
+		Total committed heap usage (bytes)=1035468800
+	File Input Format Counters
+		Bytes Read=0
+2018-02-20 19:50:01,007 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000031_0
+2018-02-20 19:50:01,007 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000032_0
+2018-02-20 19:50:01,008 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:50:01,008 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:50:01,009 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:50:01,009 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_6.csv:0+0
+2018-02-20 19:50:01,030 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:50:01,030 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:50:01,030 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:50:01,030 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:50:01,030 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:50:01,030 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:50:01,032 INFO mapred.LocalJobRunner:
+2018-02-20 19:50:01,032 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:50:01,041 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000032_0 is done. And is in the process of committing
+2018-02-20 19:50:01,042 INFO mapred.LocalJobRunner: map
+2018-02-20 19:50:01,042 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000032_0' done.
+2018-02-20 19:50:01,042 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000032_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=98211
+		FILE: Number of bytes written=128658366
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=511082247
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=69
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=0
+		Map output records=0
+		Map output bytes=0
+		Map output materialized bytes=6
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=1035468800
+	File Input Format Counters
+		Bytes Read=0
+2018-02-20 19:50:01,042 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000032_0
+2018-02-20 19:50:01,042 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000033_0
+2018-02-20 19:50:01,043 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:50:01,043 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:50:01,043 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:50:01,043 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_7.csv:0+0
+2018-02-20 19:50:01,062 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:50:01,062 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:50:01,062 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:50:01,062 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:50:01,062 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:50:01,062 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:50:01,063 INFO mapred.LocalJobRunner:
+2018-02-20 19:50:01,063 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:50:01,078 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000033_0 is done. And is in the process of committing
+2018-02-20 19:50:01,080 INFO mapred.LocalJobRunner: map
+2018-02-20 19:50:01,080 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000033_0' done.
+2018-02-20 19:50:01,080 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000033_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=98958
+		FILE: Number of bytes written=128658404
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=511082247
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=71
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=0
+		Map output records=0
+		Map output bytes=0
+		Map output materialized bytes=6
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=1035468800
+	File Input Format Counters
+		Bytes Read=0
+2018-02-20 19:50:01,080 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000033_0
+2018-02-20 19:50:01,080 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000034_0
+2018-02-20 19:50:01,080 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:50:01,080 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:50:01,080 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:50:01,081 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_8.csv:0+0
+2018-02-20 19:50:01,101 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:50:01,101 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:50:01,101 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:50:01,101 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:50:01,101 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:50:01,102 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:50:01,104 INFO mapred.LocalJobRunner:
+2018-02-20 19:50:01,104 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:50:01,117 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000034_0 is done. And is in the process of committing
+2018-02-20 19:50:01,119 INFO mapred.LocalJobRunner: map
+2018-02-20 19:50:01,119 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000034_0' done.
+2018-02-20 19:50:01,119 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000034_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=99705
+		FILE: Number of bytes written=128658442
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=511082247
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=73
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=0
+		Map output records=0
+		Map output bytes=0
+		Map output materialized bytes=6
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=1
+		Total committed heap usage (bytes)=1035468800
+	File Input Format Counters
+		Bytes Read=0
+2018-02-20 19:50:01,119 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000034_0
+2018-02-20 19:50:01,119 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_m_000035_0
+2018-02-20 19:50:01,119 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:50:01,119 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:50:01,120 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:50:01,120 INFO mapred.MapTask: Processing split: hdfs://localhost:9000/user/ubuntu/nyse/input/NYSE_daily_prices_9.csv:0+0
+2018-02-20 19:50:01,138 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2018-02-20 19:50:01,139 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2018-02-20 19:50:01,139 INFO mapred.MapTask: soft limit at 83886080
+2018-02-20 19:50:01,139 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2018-02-20 19:50:01,139 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2018-02-20 19:50:01,139 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2018-02-20 19:50:01,140 INFO mapred.LocalJobRunner:
+2018-02-20 19:50:01,140 INFO mapred.MapTask: Starting flush of map output
+2018-02-20 19:50:01,149 INFO mapred.Task: Task:attempt_local1963894680_0001_m_000035_0 is done. And is in the process of committing
+2018-02-20 19:50:01,150 INFO mapred.LocalJobRunner: map
+2018-02-20 19:50:01,150 INFO mapred.Task: Task 'attempt_local1963894680_0001_m_000035_0' done.
+2018-02-20 19:50:01,151 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_m_000035_0: Counters: 22
+	File System Counters
+		FILE: Number of bytes read=99940
+		FILE: Number of bytes written=128658480
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=511082247
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=75
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=1
+	Map-Reduce Framework
+		Map input records=0
+		Map output records=0
+		Map output bytes=0
+		Map output materialized bytes=6
+		Input split bytes=133
+		Combine input records=0
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=1035468800
+	File Input Format Counters
+		Bytes Read=0
+2018-02-20 19:50:01,151 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_m_000035_0
+2018-02-20 19:50:01,151 INFO mapred.LocalJobRunner: map task executor complete.
+2018-02-20 19:50:01,153 INFO mapred.LocalJobRunner: Waiting for reduce tasks
+2018-02-20 19:50:01,154 INFO mapred.LocalJobRunner: Starting task: attempt_local1963894680_0001_r_000000_0
+2018-02-20 19:50:01,160 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2018-02-20 19:50:01,160 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2018-02-20 19:50:01,161 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2018-02-20 19:50:01,163 INFO mapred.ReduceTask: Using ShuffleConsumerPlugin: org.apache.hadoop.mapreduce.task.reduce.Shuffle@6c6e53cf
+2018-02-20 19:50:01,164 WARN impl.MetricsSystemImpl: JobTracker metrics system already initialized!
+2018-02-20 19:50:01,180 INFO reduce.MergeManagerImpl: MergerManager: memoryLimit=724828160, maxSingleShuffleLimit=181207040, mergeThreshold=478386592, ioSortFactor=10, memToMemMergeOutputsThreshold=10
+2018-02-20 19:50:01,181 INFO reduce.EventFetcher: attempt_local1963894680_0001_r_000000_0 Thread started: EventFetcher for fetching Map Completion Events
+2018-02-20 19:50:01,215 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000011_0 decomp: 5150166 len: 5150170 to MEMORY
+2018-02-20 19:50:01,223 INFO reduce.InMemoryMapOutput: Read 5150166 bytes from map-output for attempt_local1963894680_0001_m_000011_0
+2018-02-20 19:50:01,225 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 5150166, inMemoryMapOutputs.size() -> 1, commitMemory -> 0, usedMemory ->5150166
+2018-02-20 19:50:01,230 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000024_0 decomp: 171278 len: 171282 to MEMORY
+2018-02-20 19:50:01,230 INFO reduce.InMemoryMapOutput: Read 171278 bytes from map-output for attempt_local1963894680_0001_m_000024_0
+2018-02-20 19:50:01,230 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 171278, inMemoryMapOutputs.size() -> 2, commitMemory -> 5150166, usedMemory ->5321444
+2018-02-20 19:50:01,232 WARN io.ReadaheadPool: Failed readahead on ifile
+EBADF: Bad file descriptor
+	at org.apache.hadoop.io.nativeio.NativeIO$POSIX.posix_fadvise(Native Method)
+	at org.apache.hadoop.io.nativeio.NativeIO$POSIX.posixFadviseIfPossible(NativeIO.java:267)
+	at org.apache.hadoop.io.nativeio.NativeIO$POSIX$CacheManipulator.posixFadviseIfPossible(NativeIO.java:146)
+	at org.apache.hadoop.io.ReadaheadPool$ReadaheadRequestImpl.run(ReadaheadPool.java:208)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-02-20 19:50:01,234 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000025_0 decomp: 50374 len: 50378 to MEMORY
+2018-02-20 19:50:01,234 INFO reduce.InMemoryMapOutput: Read 50374 bytes from map-output for attempt_local1963894680_0001_m_000025_0
+2018-02-20 19:50:01,234 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 50374, inMemoryMapOutputs.size() -> 3, commitMemory -> 5321444, usedMemory ->5371818
+2018-02-20 19:50:01,235 WARN io.ReadaheadPool: Failed readahead on ifile
+EBADF: Bad file descriptor
+	at org.apache.hadoop.io.nativeio.NativeIO$POSIX.posix_fadvise(Native Method)
+	at org.apache.hadoop.io.nativeio.NativeIO$POSIX.posixFadviseIfPossible(NativeIO.java:267)
+	at org.apache.hadoop.io.nativeio.NativeIO$POSIX$CacheManipulator.posixFadviseIfPossible(NativeIO.java:146)
+	at org.apache.hadoop.io.ReadaheadPool$ReadaheadRequestImpl.run(ReadaheadPool.java:208)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-02-20 19:50:01,238 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000012_0 decomp: 4789241 len: 4789245 to MEMORY
+2018-02-20 19:50:01,242 INFO reduce.InMemoryMapOutput: Read 4789241 bytes from map-output for attempt_local1963894680_0001_m_000012_0
+2018-02-20 19:50:01,242 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 4789241, inMemoryMapOutputs.size() -> 4, commitMemory -> 5371818, usedMemory ->10161059
+2018-02-20 19:50:01,243 WARN io.ReadaheadPool: Failed readahead on ifile
+EBADF: Bad file descriptor
+	at org.apache.hadoop.io.nativeio.NativeIO$POSIX.posix_fadvise(Native Method)
+	at org.apache.hadoop.io.nativeio.NativeIO$POSIX.posixFadviseIfPossible(NativeIO.java:267)
+	at org.apache.hadoop.io.nativeio.NativeIO$POSIX$CacheManipulator.posixFadviseIfPossible(NativeIO.java:146)
+	at org.apache.hadoop.io.ReadaheadPool$ReadaheadRequestImpl.run(ReadaheadPool.java:208)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-02-20 19:50:01,246 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000013_0 decomp: 4350158 len: 4350162 to MEMORY
+2018-02-20 19:50:01,248 INFO reduce.InMemoryMapOutput: Read 4350158 bytes from map-output for attempt_local1963894680_0001_m_000013_0
+2018-02-20 19:50:01,248 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 4350158, inMemoryMapOutputs.size() -> 5, commitMemory -> 10161059, usedMemory ->14511217
+2018-02-20 19:50:01,252 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000026_0 decomp: 2 len: 6 to MEMORY
+2018-02-20 19:50:01,252 INFO reduce.InMemoryMapOutput: Read 2 bytes from map-output for attempt_local1963894680_0001_m_000026_0
+2018-02-20 19:50:01,252 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2, inMemoryMapOutputs.size() -> 6, commitMemory -> 14511217, usedMemory ->14511219
+2018-02-20 19:50:01,258 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000000_0 decomp: 11512250 len: 11512254 to MEMORY
+2018-02-20 19:50:01,272 INFO reduce.InMemoryMapOutput: Read 11512250 bytes from map-output for attempt_local1963894680_0001_m_000000_0
+2018-02-20 19:50:01,272 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 11512250, inMemoryMapOutputs.size() -> 7, commitMemory -> 14511219, usedMemory ->26023469
+2018-02-20 19:50:01,282 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000001_0 decomp: 10251641 len: 10251645 to MEMORY
+2018-02-20 19:50:01,290 INFO reduce.InMemoryMapOutput: Read 10251641 bytes from map-output for attempt_local1963894680_0001_m_000001_0
+2018-02-20 19:50:01,290 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 10251641, inMemoryMapOutputs.size() -> 8, commitMemory -> 26023469, usedMemory ->36275110
+2018-02-20 19:50:01,299 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000014_0 decomp: 4202985 len: 4202989 to MEMORY
+2018-02-20 19:50:01,302 INFO reduce.InMemoryMapOutput: Read 4202985 bytes from map-output for attempt_local1963894680_0001_m_000014_0
+2018-02-20 19:50:01,302 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 4202985, inMemoryMapOutputs.size() -> 9, commitMemory -> 36275110, usedMemory ->40478095
+2018-02-20 19:50:01,307 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000002_0 decomp: 9616424 len: 9616428 to MEMORY
+2018-02-20 19:50:01,313 INFO reduce.InMemoryMapOutput: Read 9616424 bytes from map-output for attempt_local1963894680_0001_m_000002_0
+2018-02-20 19:50:01,313 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 9616424, inMemoryMapOutputs.size() -> 10, commitMemory -> 40478095, usedMemory ->50094519
+2018-02-20 19:50:01,317 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000027_0 decomp: 2 len: 6 to MEMORY
+2018-02-20 19:50:01,318 INFO reduce.InMemoryMapOutput: Read 2 bytes from map-output for attempt_local1963894680_0001_m_000027_0
+2018-02-20 19:50:01,318 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2, inMemoryMapOutputs.size() -> 11, commitMemory -> 50094519, usedMemory ->50094521
+2018-02-20 19:50:01,322 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000015_0 decomp: 3957628 len: 3957632 to MEMORY
+2018-02-20 19:50:01,324 INFO reduce.InMemoryMapOutput: Read 3957628 bytes from map-output for attempt_local1963894680_0001_m_000015_0
+2018-02-20 19:50:01,324 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 3957628, inMemoryMapOutputs.size() -> 12, commitMemory -> 50094521, usedMemory ->54052149
+2018-02-20 19:50:01,328 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000028_0 decomp: 2 len: 6 to MEMORY
+2018-02-20 19:50:01,329 INFO reduce.InMemoryMapOutput: Read 2 bytes from map-output for attempt_local1963894680_0001_m_000028_0
+2018-02-20 19:50:01,329 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2, inMemoryMapOutputs.size() -> 13, commitMemory -> 54052149, usedMemory ->54052151
+2018-02-20 19:50:01,334 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000029_0 decomp: 2 len: 6 to MEMORY
+2018-02-20 19:50:01,334 INFO reduce.InMemoryMapOutput: Read 2 bytes from map-output for attempt_local1963894680_0001_m_000029_0
+2018-02-20 19:50:01,334 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2, inMemoryMapOutputs.size() -> 14, commitMemory -> 54052151, usedMemory ->54052153
+2018-02-20 19:50:01,339 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000003_0 decomp: 8029747 len: 8029751 to MEMORY
+2018-02-20 19:50:01,344 INFO reduce.InMemoryMapOutput: Read 8029747 bytes from map-output for attempt_local1963894680_0001_m_000003_0
+2018-02-20 19:50:01,345 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 8029747, inMemoryMapOutputs.size() -> 15, commitMemory -> 54052153, usedMemory ->62081900
+2018-02-20 19:50:01,349 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000016_0 decomp: 3709798 len: 3709802 to MEMORY
+2018-02-20 19:50:01,351 INFO reduce.InMemoryMapOutput: Read 3709798 bytes from map-output for attempt_local1963894680_0001_m_000016_0
+2018-02-20 19:50:01,351 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 3709798, inMemoryMapOutputs.size() -> 16, commitMemory -> 62081900, usedMemory ->65791698
+2018-02-20 19:50:01,356 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000017_0 decomp: 3221685 len: 3221689 to MEMORY
+2018-02-20 19:50:01,357 INFO reduce.InMemoryMapOutput: Read 3221685 bytes from map-output for attempt_local1963894680_0001_m_000017_0
+2018-02-20 19:50:01,357 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 3221685, inMemoryMapOutputs.size() -> 17, commitMemory -> 65791698, usedMemory ->69013383
+2018-02-20 19:50:01,360 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000030_0 decomp: 2 len: 6 to MEMORY
+2018-02-20 19:50:01,361 INFO reduce.InMemoryMapOutput: Read 2 bytes from map-output for attempt_local1963894680_0001_m_000030_0
+2018-02-20 19:50:01,362 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2, inMemoryMapOutputs.size() -> 18, commitMemory -> 69013383, usedMemory ->69013385
+2018-02-20 19:50:01,367 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000004_0 decomp: 8026113 len: 8026117 to MEMORY
+2018-02-20 19:50:01,371 INFO reduce.InMemoryMapOutput: Read 8026113 bytes from map-output for attempt_local1963894680_0001_m_000004_0
+2018-02-20 19:50:01,372 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 8026113, inMemoryMapOutputs.size() -> 19, commitMemory -> 69013385, usedMemory ->77039498
+2018-02-20 19:50:01,376 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000005_0 decomp: 7989759 len: 7989763 to MEMORY
+2018-02-20 19:50:01,380 INFO reduce.InMemoryMapOutput: Read 7989759 bytes from map-output for attempt_local1963894680_0001_m_000005_0
+2018-02-20 19:50:01,381 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 7989759, inMemoryMapOutputs.size() -> 20, commitMemory -> 77039498, usedMemory ->85029257
+2018-02-20 19:50:01,385 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000018_0 decomp: 2494638 len: 2494642 to MEMORY
+2018-02-20 19:50:01,387 INFO reduce.InMemoryMapOutput: Read 2494638 bytes from map-output for attempt_local1963894680_0001_m_000018_0
+2018-02-20 19:50:01,387 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2494638, inMemoryMapOutputs.size() -> 21, commitMemory -> 85029257, usedMemory ->87523895
+2018-02-20 19:50:01,392 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000006_0 decomp: 7945607 len: 7945611 to MEMORY
+2018-02-20 19:50:01,397 INFO reduce.InMemoryMapOutput: Read 7945607 bytes from map-output for attempt_local1963894680_0001_m_000006_0
+2018-02-20 19:50:01,397 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 7945607, inMemoryMapOutputs.size() -> 22, commitMemory -> 87523895, usedMemory ->95469502
+2018-02-20 19:50:01,411 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000031_0 decomp: 2 len: 6 to MEMORY
+2018-02-20 19:50:01,411 INFO reduce.InMemoryMapOutput: Read 2 bytes from map-output for attempt_local1963894680_0001_m_000031_0
+2018-02-20 19:50:01,411 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2, inMemoryMapOutputs.size() -> 23, commitMemory -> 95469502, usedMemory ->95469504
+2018-02-20 19:50:01,416 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000019_0 decomp: 2402694 len: 2402698 to MEMORY
+2018-02-20 19:50:01,418 INFO reduce.InMemoryMapOutput: Read 2402694 bytes from map-output for attempt_local1963894680_0001_m_000019_0
+2018-02-20 19:50:01,418 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2402694, inMemoryMapOutputs.size() -> 24, commitMemory -> 95469504, usedMemory ->97872198
+2018-02-20 19:50:01,421 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000032_0 decomp: 2 len: 6 to MEMORY
+2018-02-20 19:50:01,421 INFO reduce.InMemoryMapOutput: Read 2 bytes from map-output for attempt_local1963894680_0001_m_000032_0
+2018-02-20 19:50:01,422 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2, inMemoryMapOutputs.size() -> 25, commitMemory -> 97872198, usedMemory ->97872200
+2018-02-20 19:50:01,426 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000033_0 decomp: 2 len: 6 to MEMORY
+2018-02-20 19:50:01,426 INFO reduce.InMemoryMapOutput: Read 2 bytes from map-output for attempt_local1963894680_0001_m_000033_0
+2018-02-20 19:50:01,426 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2, inMemoryMapOutputs.size() -> 26, commitMemory -> 97872200, usedMemory ->97872202
+2018-02-20 19:50:01,460 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000007_0 decomp: 7207213 len: 7207217 to MEMORY
+2018-02-20 19:50:01,464 INFO reduce.InMemoryMapOutput: Read 7207213 bytes from map-output for attempt_local1963894680_0001_m_000007_0
+2018-02-20 19:50:01,464 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 7207213, inMemoryMapOutputs.size() -> 27, commitMemory -> 97872202, usedMemory ->105079415
+2018-02-20 19:50:01,468 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000020_0 decomp: 2390697 len: 2390701 to MEMORY
+2018-02-20 19:50:01,470 INFO reduce.InMemoryMapOutput: Read 2390697 bytes from map-output for attempt_local1963894680_0001_m_000020_0
+2018-02-20 19:50:01,470 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2390697, inMemoryMapOutputs.size() -> 28, commitMemory -> 105079415, usedMemory ->107470112
+2018-02-20 19:50:01,473 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000021_0 decomp: 2245680 len: 2245684 to MEMORY
+2018-02-20 19:50:01,475 INFO reduce.InMemoryMapOutput: Read 2245680 bytes from map-output for attempt_local1963894680_0001_m_000021_0
+2018-02-20 19:50:01,475 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2245680, inMemoryMapOutputs.size() -> 29, commitMemory -> 107470112, usedMemory ->109715792
+2018-02-20 19:50:01,478 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000034_0 decomp: 2 len: 6 to MEMORY
+2018-02-20 19:50:01,479 INFO reduce.InMemoryMapOutput: Read 2 bytes from map-output for attempt_local1963894680_0001_m_000034_0
+2018-02-20 19:50:01,479 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2, inMemoryMapOutputs.size() -> 30, commitMemory -> 109715792, usedMemory ->109715794
+2018-02-20 19:50:01,484 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000008_0 decomp: 5814770 len: 5814774 to MEMORY
+2018-02-20 19:50:01,487 INFO reduce.InMemoryMapOutput: Read 5814770 bytes from map-output for attempt_local1963894680_0001_m_000008_0
+2018-02-20 19:50:01,487 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 5814770, inMemoryMapOutputs.size() -> 31, commitMemory -> 109715794, usedMemory ->115530564
+2018-02-20 19:50:01,492 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000009_0 decomp: 5690139 len: 5690143 to MEMORY
+2018-02-20 19:50:01,496 INFO reduce.InMemoryMapOutput: Read 5690139 bytes from map-output for attempt_local1963894680_0001_m_000009_0
+2018-02-20 19:50:01,496 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 5690139, inMemoryMapOutputs.size() -> 32, commitMemory -> 115530564, usedMemory ->121220703
+2018-02-20 19:50:01,500 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000022_0 decomp: 905605 len: 905609 to MEMORY
+2018-02-20 19:50:01,501 INFO reduce.InMemoryMapOutput: Read 905605 bytes from map-output for attempt_local1963894680_0001_m_000022_0
+2018-02-20 19:50:01,501 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 905605, inMemoryMapOutputs.size() -> 33, commitMemory -> 121220703, usedMemory ->122126308
+2018-02-20 19:50:01,505 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000010_0 decomp: 5510158 len: 5510162 to MEMORY
+2018-02-20 19:50:01,508 INFO reduce.InMemoryMapOutput: Read 5510158 bytes from map-output for attempt_local1963894680_0001_m_000010_0
+2018-02-20 19:50:01,508 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 5510158, inMemoryMapOutputs.size() -> 34, commitMemory -> 122126308, usedMemory ->127636466
+2018-02-20 19:50:01,511 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000035_0 decomp: 2 len: 6 to MEMORY
+2018-02-20 19:50:01,512 INFO reduce.InMemoryMapOutput: Read 2 bytes from map-output for attempt_local1963894680_0001_m_000035_0
+2018-02-20 19:50:01,512 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 2, inMemoryMapOutputs.size() -> 35, commitMemory -> 127636466, usedMemory ->127636468
+2018-02-20 19:50:01,515 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1963894680_0001_m_000023_0 decomp: 536951 len: 536955 to MEMORY
+2018-02-20 19:50:01,516 INFO reduce.InMemoryMapOutput: Read 536951 bytes from map-output for attempt_local1963894680_0001_m_000023_0
+2018-02-20 19:50:01,517 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 536951, inMemoryMapOutputs.size() -> 36, commitMemory -> 127636468, usedMemory ->128173419
+2018-02-20 19:50:01,517 INFO reduce.EventFetcher: EventFetcher is interrupted.. Returning
+2018-02-20 19:50:01,517 INFO mapred.LocalJobRunner: 36 / 36 copied.
+2018-02-20 19:50:01,518 INFO reduce.MergeManagerImpl: finalMerge called with 36 in-memory map-outputs and 0 on-disk map-outputs
+2018-02-20 19:50:01,537 INFO mapred.Merger: Merging 36 sorted segments
+2018-02-20 19:50:01,538 INFO mapred.Merger: Down to the last merge-pass, with 26 segments left of total size: 128173259 bytes
+2018-02-20 19:50:04,400 INFO reduce.MergeManagerImpl: Merged 36 segments, 128173419 bytes to disk to satisfy reduce memory limit
+2018-02-20 19:50:04,400 INFO reduce.MergeManagerImpl: Merging 1 files, 128173353 bytes from disk
+2018-02-20 19:50:04,401 INFO reduce.MergeManagerImpl: Merging 0 segments, 0 bytes from memory into reduce
+2018-02-20 19:50:04,401 INFO mapred.Merger: Merging 1 sorted segments
+2018-02-20 19:50:04,401 INFO mapred.Merger: Down to the last merge-pass, with 1 segments left of total size: 128173344 bytes
+2018-02-20 19:50:04,402 INFO mapred.LocalJobRunner: 36 / 36 copied.
+2018-02-20 19:50:04,430 INFO Configuration.deprecation: mapred.skip.on is deprecated. Instead, use mapreduce.job.skiprecords
+2018-02-20 19:50:07,759 INFO mapred.Task: Task:attempt_local1963894680_0001_r_000000_0 is done. And is in the process of committing
+2018-02-20 19:50:07,761 INFO mapred.LocalJobRunner: 36 / 36 copied.
+2018-02-20 19:50:07,761 INFO mapred.Task: Task attempt_local1963894680_0001_r_000000_0 is allowed to commit now
+2018-02-20 19:50:07,780 INFO output.FileOutputCommitter: Saved output of task 'attempt_local1963894680_0001_r_000000_0' to hdfs://localhost:9000/user/ubuntu/nyse/output
+2018-02-20 19:50:07,780 INFO mapred.LocalJobRunner: reduce > reduce
+2018-02-20 19:50:07,780 INFO mapred.Task: Task 'attempt_local1963894680_0001_r_000000_0' done.
+2018-02-20 19:50:07,781 INFO mapred.Task: Final Counters for attempt_local1963894680_0001_r_000000_0: Counters: 29
+	File System Counters
+		FILE: Number of bytes read=256448008
+		FILE: Number of bytes written=256831833
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=511082247
+		HDFS: Number of bytes written=63812
+		HDFS: Number of read operations=80
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=3
+	Map-Reduce Framework
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=2853
+		Reduce shuffle bytes=128173563
+		Reduce input records=9211031
+		Reduce output records=2853
+		Spilled Records=9211031
+		Shuffled Maps =36
+		Failed Shuffles=0
+		Merged Map outputs=36
+		GC time elapsed (ms)=41
+		Total committed heap usage (bytes)=985137152
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Output Format Counters
+		Bytes Written=63812
+2018-02-20 19:50:07,782 INFO mapred.LocalJobRunner: Finishing task: attempt_local1963894680_0001_r_000000_0
+2018-02-20 19:50:07,782 INFO mapred.LocalJobRunner: reduce task executor complete.
+2018-02-20 19:50:08,362 INFO mapreduce.Job:  map 100% reduce 100%
+2018-02-20 19:50:08,362 INFO mapreduce.Job: Job job_local1963894680_0001 completed successfully
+2018-02-20 19:50:08,385 INFO mapreduce.Job: Counters: 35
+	File System Counters
+		FILE: Number of bytes read=258832442
+		FILE: Number of bytes written=3885754232
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=14908431484
+		HDFS: Number of bytes written=63812
+		HDFS: Number of read operations=1520
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=39
+	Map-Reduce Framework
+		Map input records=9211031
+		Map output records=9211031
+		Map output bytes=109751285
+		Map output materialized bytes=128173563
+		Input split bytes=4788
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=2853
+		Reduce shuffle bytes=128173563
+		Reduce input records=9211031
+		Reduce output records=2853
+		Spilled Records=18422062
+		Shuffled Maps =36
+		Failed Shuffles=0
+		Merged Map outputs=36
+		GC time elapsed (ms)=1455
+		Total committed heap usage (bytes)=35557212160
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters
+		Bytes Read=511082247
+	File Output Format Counters
+		Bytes Written=63812
+ubuntu@ip-172-31-25-109:~/documents/info7250/src$
