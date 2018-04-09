@@ -13,7 +13,6 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
-import sun.security.krb5.Config;
 
 public class TopK extends Configured implements Tool {
 
